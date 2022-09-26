@@ -199,7 +199,7 @@ export default class Connect extends React.Component {
                         </div>
                     </div>
                     <div className={styles.info}>
-                        <p>You may have played a similar game to this one: Connect Four. For legal purposes, this is not that game. To play, hover you mouse over any column with a downward arrow above it (an "X" means you can't play in that column). Click the gold circle that appears to drop a circle into that column. The computer will take a turn before passing it back to you.</p>
+                        <p>You may have played a similar game to this one: Connect Four. For legal purposes, this is not that game. To play, hover you mouse over any column with a downward arrow above it (an &quot;X&quot; means you can&apos;t play in that column). Click the gold circle that appears to drop a circle into that column. The computer will take a turn before passing it back to you.</p>
                         <p>To win the game, you need to get four in a row in any direction: vertical, horizontal, or diagonal. make sure to plack the computer if its about to win! For more advanced strategies, continue reading (or you can just start playing).</p>
                         <p>Perfect Play</p>
                         <button className={styles.btn} onClick={click => this.reset()}>RESET THE GAME</button>

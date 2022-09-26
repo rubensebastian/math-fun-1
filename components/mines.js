@@ -116,15 +116,15 @@ export default class Minesweeper extends React.Component {
             return;
         }
 
-        if(this.state.cellValue[rowClicked][colClicked] = 0){//this doesn't seem to be running
-            shownCopy[rowClicked][colClicked] = true;
-            this.setState({
-                valueShown: shownCopy,
-            });
-            for(let i = 1; i < surroundingArray; i++){
-                this.chooseCell(surroundingArray[0], surroundingArray[1]);
-            }
-        }
+        // if(this.state.cellValue[rowClicked][colClicked] = 0){//this doesn't seem to be running
+        //     shownCopy[rowClicked][colClicked] = true;
+        //     this.setState({
+        //         valueShown: shownCopy,
+        //     });
+        //     for(let i = 1; i < surroundingArray; i++){
+        //         this.chooseCell(surroundingArray[0], surroundingArray[1]);
+        //     }
+        // }
     }
 
     setDifficulty = (difficulty) => {

@@ -34,10 +34,10 @@ class Explanation extends React.Component {
         return (
             <div className={styles.info}>
                 <h2 className={styles.targetHeading}>What makes color on the Internet?</h2>
-                <p>You've probably mixed paint in your art class. Red and blue make purple. Yellow and blue make green. Mix everything together and you get a murky brown.</p>
+                <p>You&apos;ve probably mixed paint in your art class. Red and blue make purple. Yellow and blue make green. Mix everything together and you get a murky brown.</p>
                 <p>Color on the Internet works differently. When all the colors are mixed together, you get white. When there are no colors at all, you get black. Notice on the right hand side how all the colors start at a value of 255 (there is a sciencey reason for this). The canvas is white, but if you drag the sliders to the left, you subtract that color from white. Then, click and draw on the canvas to see what color you have.</p>
-                <p>If you want to see the colors change in real time, select "Fill Canvas." This will change the background color of the canvas as you drag the sliders. Want to paint instead? Choose the button that now says "Use Paint Brush," select a color, and start painting!</p>
-                <p>Since we have 256 options (0-255) for each of red, blue, and green, we can make 256 * 256 * 256 different combinations. That's over 16 million colors! Humans can only see about 10 million colors, so that's more than enough!</p>
+                <p>If you want to see the colors change in real time, select &quot;Fill Canvas.&quot; This will change the background color of the canvas as you drag the sliders. Want to paint instead? Choose the button that now says &quot;Use Paint Brush,&quot; select a color, and start painting!</p>
+                <p>Since we have 256 options (0-255) for each of red, blue, and green, we can make 256 * 256 * 256 different combinations. That&apos;s over 16 million colors! Humans can only see about 10 million colors, so that&apos;s more than enough!</p>
             </div>
         );
     }
