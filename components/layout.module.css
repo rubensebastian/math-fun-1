@@ -1,0 +1,658 @@
+.wholeShift {
+  display: flex;
+  flex-direction: row;
+  height: 150px;
+  align-items: center;
+  justify-content: center;
+}
+
+.shiftDescriptions {
+  height: 85px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.twoRow {
+  display: flex;
+  flex-direction: row;
+  height: 100px;
+  border: 1px solid #782F40;
+  margin-left: 5px;
+}
+
+.letterBoxes {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border: 1px solid #782F40;
+  font-size: 18px;
+  width: 40px;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.inputBox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.buttonContainer {
+  height: 100px;
+  max-width: 25%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.heading1 {
+  text-align: center;
+}
+
+.largerText {
+  font-size: 18px;
+}
+
+.btn {
+  background-color: #782F40;
+  color: white;
+  border-radius: 5px;
+  border: 1px solid black;
+  padding: 10px 10px;
+  margin: 10px 10px;
+}
+
+.btn:hover {
+  box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.btn:active {
+  background-color: #750f27;
+}
+
+.fsuHolder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menuContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: #782F40;
+  width: 100%;
+}
+
+.menuOption {
+  list-style-type: none;
+  font-size: 25px;
+  color: white;
+  padding: 15px 15px;
+  margin: auto 15px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.promoLink {
+  color: blue;
+  text-decoration: none;
+}
+
+.promoLink:active {
+  color: cyan;
+  text-decoration: none;
+}
+
+.menuOption:hover {
+  background-color: #5a0418;
+}
+
+.menuLink {
+  text-decoration: none;
+  color: black;
+}
+
+.stoneWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+}
+
+.stonesHolder {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.ticButton {
+  background-color: rgb(133, 216, 255);
+  border: 1px solid black;
+  float: left;
+  font-size: 72px;
+  font-weight: bold;
+  line-height: 102px;
+  height: 102px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  width: 102px;
+}
+
+.ticRow:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.ticGame {
+  display: flex;
+  flex-direction: row;
+}
+
+.vertical {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.horizontal {
+  display: flex;
+  flex-direction: row;
+  flex-basis: auto;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 15px;
+  min-width: 100%;
+}
+
+.horizontal>div {
+  margin: auto 25px;
+}
+
+.nimButtonHolder {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.nimButton {
+  width: 210px;
+  background-color: #782F40;
+  border: none;
+  border-radius: 1em;
+  color: white;
+  padding: 10px 0px;
+  margin: 5px 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.nimButton:active {
+  background-color: #750f27;
+}
+
+.info {
+  max-width: 45%;
+  background-color: black;
+  color: white;
+  border: 2px solid black;
+  padding: 15px 35px;
+  border-radius: 1.5em;
+  font-size: 18px;
+}
+
+.stoneBorder {
+  background-color: black;
+  border-radius: 1.5em;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 45%;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 0px;
+}
+
+.checkerRed {
+  border: 3px solid black;
+  border-radius: 50%;
+  background-color: #782F40;
+  height: 75px;
+  width: 75px;
+}
+
+.checkerYellow {
+  border: 3px solid black;
+  border-radius: 50%;
+  background-color: #CEB888;
+  height: 75px;
+  width: 75px;
+}
+
+.checkerEmpty {
+  border: 3px solid black;
+  border-radius: 50%;
+  background-color: white;
+  height: 75px;
+  width: 75px;
+}
+
+.checkerRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 75px;
+  width: 750px;
+}
+
+.checkerDrop {
+  width: 35px;
+  font-size: 24px;
+  user-select: none;
+  cursor: pointer;
+  border: none;
+  border-radius: 50%;
+  background-color: #789399;
+}
+
+.checkerDrop:hover {
+  border: 3px solid black;
+  border-radius: 50%;
+  background-color: #CEB888;
+  color: #CEB888;
+  height: 75px;
+  width: 75px;
+}
+
+.checkerDropContainer {
+  width: 75px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkerDropRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100px;
+}
+
+.checkerGame {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 60vh;
+}
+
+.horizontalSplit {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.horizontalSplit>div {
+  margin: auto 50px;
+}
+
+.informationPanel {
+  padding: 30px;
+}
+
+.horizontalLine {
+  border: 1px dotted black;
+  fill: black;
+  height: 0px;
+  width: 150px;
+}
+
+.verticalLine {
+  border: 1px dotted black;
+  fill: black;
+  height: 150px;
+  width: 0px;
+}
+
+.verticalLineHuman {
+  background-color: blue;
+  height: 150px;
+  width: 10px;
+}
+
+.verticalLineComputer {
+  background-color: red;
+  height: 150px;
+  width: 10px;
+}
+
+.horizontalLineHuman {
+  background-color: blue;
+  height: 10px;
+  width: 150px;
+}
+
+.horizontalLineComputer {
+  background-color: red;
+  height: 10px;
+  width: 150px;
+}
+
+.horizontalLine:hover {
+  background-color: blue;
+  height: 10px;
+  width: 150px;
+}
+
+.verticalLine:hover {
+  background-color: blue;
+  height: 150px;
+  width: 10px;
+}
+
+.dot {
+  border: 2px solid black;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+}
+
+.dotBoxGrid {
+  display: grid;
+  grid-template-columns: 30px 160px 30px 160px 30px 160px 30px;
+  grid-template-rows: 30px 160px 30px 160px 30px 160px 30px;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+}
+
+.centerText {
+  text-align: center;
+}
+
+.dropdown {
+  appearance: none;
+  border: none;
+  border-radius: 0.25em;
+  padding: 1em 1.15em;
+  margin: 0em .5em 1em .5em;
+  font-size: 1.25rem;
+  background-color: #fff;
+}
+
+.mineMenu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.mineCovered {
+  background-color: rgb(135, 135, 135);
+  width: 25px;
+  height: 25px;
+  margin: 3px;
+  display: inline-block;
+  border: 2px solid black;
+}
+
+.mineCovered:active {
+  background-color: rgb(65, 65, 65);
+  width: 25px;
+  height: 25px;
+  margin: 3px;
+  display: inline-block;
+  border: none;
+}
+
+.mineExposed {
+  border: 1px solid black;
+}
+
+.mineBomb {
+  border: 1px solid black;
+}
+
+.mineFlagged {
+  border: 1px solid black;
+}
+
+.mineRows {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.ticRow {
+  display: flex;
+  flex-direction: row;
+}
+
+.ticSquare {
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  color: #750f27;
+  font-size: 50px;
+  user-select: none;
+  align-items: center;
+  border: 1px solid black;
+  height: 100px;
+  width: 100px;
+}
+
+.targetHeading {
+  padding: 5px 0px 0px 0px;
+  margin: 0px;
+}
+
+.targetExplanation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 850px;
+  background-color: white;
+  border-radius: 1.5em;
+  padding: 0em 1em;
+  margin-top: 1em;
+}
+
+.colors {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.colors>div {
+  margin: 0em 1.5em;
+}
+
+.card {
+  border: 1px solid black;
+  border-radius: .25em;
+  width: 160px;
+  height: 210px;
+  background-color: white;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 42px;
+  user-select: none;
+}
+
+.cardHidden {
+  border: 1px solid black;
+  border-radius: .2em;
+  width: 160px;
+  height: 210px;
+  background-color: black;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 42px;
+  user-select: none;
+}
+
+.cardHolderRed {
+  background-color: pink;
+  display: flex;
+  width: 750px;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 1em;
+  border: 1px solid black;
+  border-radius: .5em;
+  padding: 1em 2em;
+}
+
+.cardHolderBlue {
+  background-color: aqua;
+  display: flex;
+  width: 750px;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 1em;
+  border: 1px solid black;
+  border-radius: .5em;
+  padding: 1em 2em;
+}
+
+.cardHolderRed>div {
+  margin: auto 20px;
+}
+
+.cardHolderRed>p {
+  font-size: 25px;
+}
+
+.cardHolderBlue>div {
+  margin: auto 20px;
+}
+
+.cardHolderBlue>p {
+  font-size: 25px;
+}
+
+.mandelbrot {
+  background-color: rgb(63, 63, 63);
+  color: white;
+  font-size: 20px;
+  padding: 50px 65px 15px 65px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mandelbrot > p {
+  margin: 15px 0px 0px 0px;
+}
+
+.vertical > p {
+  margin-top: 0px;
+}
+
+.vertical > h1 {
+  margin-bottom: 10px;
+}
+
+.welcome {
+  max-width: 750px;
+  padding: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 1250px) {
+  .colors {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .colors>div {
+    margin: 1.5em 0em;
+    max-width: 95%;
+  }
+}
+
+
+@media only screen and (max-width: 1200px) {
+  .info {
+    max-width: 85%;
+    background-color: black;
+    color: white;
+    border: 2px solid black;
+    padding: 15px 35px;
+    margin-bottom: 50px;
+    border-radius: 1.5em;
+  }
+
+  .stoneBorder {
+    background-color: black;
+    border-radius: 1.5em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 85%;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 0px;
+  }
+}
+
+
+@media only screen and (max-width: 1000px) {
+  .reverse {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .wholeShift {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .letterBoxes {
+    display: flex;
+    flex-direction: row;
+    width: 100px;
+    height: 50px;
+  }
+
+  .twoRow {
+    display: flex;
+    flex-direction: column;
+  }
+}
