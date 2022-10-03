@@ -21,12 +21,9 @@ export default class Activities extends React.Component {
                 <div><Link href="/activities/colors">
                     <a>Numbers in Art</a>
                 </Link></div>
-                {/* <div><Link href="/activities/fractal">
-                    <a>Fractals!</a>
+                <div><Link href="/activities/tessellation">
+                    <a>Tessellation</a>
                 </Link></div>
-                <div><Link href="/activities/polygon">
-                    <a>Polygon Programming</a>
-                </Link></div> */}
             </div>
         )
     }

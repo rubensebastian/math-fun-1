@@ -4,7 +4,7 @@ import styles from "./layout.module.css";
 class MineSquare extends React.Component {
     render() {//run checkbomb every time button is clicked
         return (
-            <button onClick={() => this.props.checkSquare(this.props.row, this.props.col)} className={styles.mineCovered}>{this.props.showValue === true ? this.props.mineNumber: null}</button>//if mineN = 0, blank; if mineN = -1, bomb
+            <button onClick={() => this.props.checkSquare(this.props.row, this.props.col)} className={styles.mineCovered}>{this.props.showValue === true ? this.props.mineNumber : null}</button>//if mineN = 0, blank; if mineN = -1, bomb
         )
     }
 }
@@ -46,18 +46,21 @@ export default class Minesweeper extends React.Component {
         }
         let nearbyBombCount = 0;
         for (let k = 1; k < surrounding.length; k++) {
-            if (bombs[surrounding[k][0]][surrounding[k][1]] === true) {//grabs the surrounding cells from chooseCell function
-                nearbyBombCount++;//make sure this avoids out of bounds
+            if (surrounding[k][0] >= 0 && surrounding[k][0] < bombs.length && surrounding[k][1] >= 0 && surrounding[k][1] < bombs.length) {
+                if (bombs[surrounding[k][0]][surrounding[k][1]] === true) {//grabs the surrounding cells from chooseCell function
+                    nearbyBombCount++;
+                }
             }
         }
+        console.log("made it here")
         return nearbyBombCount;
     }
 
     distributeBombs = (surroundingArray) => {
-        let bombPositions = [...this.state.cellValue];//this just needs to be the same dimensions of null values
+        let bombPositions = Array.from({ length: this.state.difficulty == "easy" ? 9 : 16 }, e => Array(this.state.difficulty == "easy" ? 9 : this.state.difficulty == "medium" ? 16 : 30).fill(null));
         for (let i = 0; i < this.state.bombNumber; i++) {//generates positions of all the bombs
-            let row = Math.floor(Math.random() * this.state.cellValue.length);//random row for bomb
-            let column = Math.floor(Math.random() * this.state.cellValue[0].length);//random column for bomb
+            let row = Math.floor(Math.random() * bombPositions.length);//random row for bomb
+            let column = Math.floor(Math.random() * bombPositions[0].length);//random column for bomb
             for (let j = 0; j < surroundingArray.length; j++) {
                 if (row == surroundingArray[j][0] && column == surroundingArray[j][1]) {
                     i--;//if it would put a bomb there, resets instead
@@ -68,10 +71,11 @@ export default class Minesweeper extends React.Component {
                 }
             }
         }
+
         let values = [...this.state.cellValue];
         for (let i = 0; i < values.length; i++) {//rows
             for (let j = 0; j < values[0].length; j++) {//columns
-                values[i][j] = 0//this.checkBombs(i, j, surroundingArray, bombPositions);
+                values[i][j] = this.checkBombs(i, j, surroundingArray, bombPositions);
             }
         }
         this.setState({
@@ -116,15 +120,15 @@ export default class Minesweeper extends React.Component {
             return;
         }
 
-        // if(this.state.cellValue[rowClicked][colClicked] = 0){//this doesn't seem to be running
-        //     shownCopy[rowClicked][colClicked] = true;
-        //     this.setState({
-        //         valueShown: shownCopy,
-        //     });
-        //     for(let i = 1; i < surroundingArray; i++){
-        //         this.chooseCell(surroundingArray[0], surroundingArray[1]);
-        //     }
-        // }
+        if (this.state.cellValue[rowClicked][colClicked] === 0) {
+            shownCopy[rowClicked][colClicked] = true;
+            this.setState({
+                valueShown: shownCopy,
+            });
+            for (let i = 1; i < surroundingArray; i++) {
+                this.chooseCell(surroundingArray[i][0], surroundingArray[i][1]);
+            }
+        }
     }
 
     setDifficulty = (difficulty) => {
@@ -132,18 +136,18 @@ export default class Minesweeper extends React.Component {
         let shown;
         let bombNum;
         if (difficulty == "easy") {
-            states = Array.from({length: 9}, e => Array(9).fill(null));
-            shown = Array.from({length: 9}, e => Array(9).fill(null));
+            states = Array.from({ length: 9 }, e => Array(9).fill(null));
+            shown = Array.from({ length: 9 }, e => Array(9).fill(null));
             bombNum = 10;
         }
         if (difficulty == "medium") {
-            states = Array.from({length: 16}, e => Array(16).fill(null));
-            shown = Array.from({length: 261}, e => Array(16).fill(null));
+            states = Array.from({ length: 16 }, e => Array(16).fill(null));
+            shown = Array.from({ length: 16 }, e => Array(16).fill(null));
             bombNum = 40;
         }
         if (difficulty == "hard") {
-            states = Array.from({length: 16}, e => Array(30).fill(null));
-            shown = Array.from({length: 16}, e => Array(30).fill(null));
+            states = Array.from({ length: 16 }, e => Array(30).fill(null));
+            shown = Array.from({ length: 16 }, e => Array(30).fill(null));
             bombNum = 99;
         }
         this.setState({//difficulty can be entered as easy, medium, or hard
