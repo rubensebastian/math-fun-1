@@ -2,8 +2,6 @@ import React from "react";
 import styles from "./layout.module.css";
 import Image from 'next/image';
 import mandelbrot from '../assets/mandelbrot.jpeg';
-import sierpinski from '../assets/Sierpinski_zoom_2.gif';
-import koch from '../assets/KochSnow.gif'
 
 class Fractal extends React.Component {
     render() {
