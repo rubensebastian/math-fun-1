@@ -21,7 +21,7 @@ class Explanation extends React.Component {
         }
         return (
             <div>
-                <h2>How to Play</h2>
+                <h2><i>How to Play</i></h2>
                 <p>The game of Nim starts with 20 stones on the table (candies on the computer). Each turn, a player takes 1, 2, or 3 items, and they <strong><em>must</em></strong> take at least 1. Whoever is forced to take the last candy loses the game, so try to make the computer take the last candy!</p>
             </div>
         );
@@ -47,7 +47,7 @@ class Board extends React.Component {
             remainingStones: 20,
             playerTurn: true,
             lastTaken: null,
-            firstTurn: false,
+            firstTurn: true,
         };
     }
 
@@ -91,7 +91,7 @@ class Board extends React.Component {
         if (!this.state.playerTurn) {
             setTimeout(() => {
                 this.perfectPlayChoice(this.state.remainingStones);
-            }, 1500);
+            }, 1000);
         }
 
         let stones = [];

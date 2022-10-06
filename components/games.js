@@ -19,7 +19,7 @@ export default class Games extends React.Component {
                     </Link>
                 </div>
 
-                <div>
+                {/* <div>
                     <Link href="/games/tictactoe">
                         <a>Tic Tac Toe (Computer Play needed)</a>
                     </Link>
@@ -35,7 +35,7 @@ export default class Games extends React.Component {
                     <Link href="/games/dotbox">
                         <a>Dots and Boxes (Computer Play needed)</a>
                     </Link>
-                </div>
+                </div> */}
 
                 <div>
                     <Link href="/games/mines">
@@ -45,7 +45,13 @@ export default class Games extends React.Component {
 
                 <div>
                     <Link href="/games/cards">
-                        <a>Cards</a>
+                        <a>Card Switching</a>
+                    </Link>
+                </div>
+
+                <div>
+                    <Link href="/games/nim2">
+                        <a>Nim Variation</a>
                     </Link>
                 </div>
             </div>

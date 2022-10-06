@@ -8,9 +8,8 @@ import pentagon from '../assets/pentagon.png'
 import hexagon from '../assets/hexagon.png'
 import heptagon from '../assets/heptagon.png'
 
-let showTessellation = false;
-
-//maybe create arrays for rgb values with array.fill/from
+//consider making the values for the fill colors in an array
+let showTessellation;
 
 // Will only import `react-p5` on client-side
 const Sketch = dynamic(() => import('react-p5').then((mod) => mod.default), {
@@ -24,7 +23,14 @@ const setup = (p5, canvasParentRef) => {
     p5.createCanvas(728, 540).parent(canvasParentRef);
     p5.background(255);
     p5.frameRate(5);
+    //create buttons here
+    let triImage = p5.loadImage("../assets/triangle.png")
+    p5.image(triImage, 0, 0);
 };
+
+function Example(props) {
+    return <Sketch className={styles.canvas} setup={setup} draw={draw} />;
+}
 
 const draw = (p5) => {
     if (showTessellation == "triangle") {
@@ -74,26 +80,17 @@ const draw = (p5) => {
         }
 
     }
+    //p5.noLoop();
 };
 
+
 class Explanation extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            tessellate: false,
-        }
-    }
-
-    tessellate = (shape) => {
-        showTessellation = shape;
-    }
-
     render() {
         return (
             <div className={styles.info}>
                 <h2 className={styles.targetHeading}>How to Tessellate</h2>
                 <h3>Shapes that <em>will</em> tessellate</h3>
-                <div className={styles.shapeHolder} ><Image onClick={() => this.tessellate("triangle")} src={triangle} alt="" width="231px" height="200px" /><Image src={square} onClick={() => this.tessellate("square")} alt="" width="200" height="200" /><Image src={hexagon} alt="" width="231" height="200" /></div>
+                <div className={styles.shapeHolder} ><Image onClick={() => this.props.tessellate("triangle")} src={triangle} alt="" width="231px" height="200px" /><Image src={square} onClick={() => this.props.tessellate("square")} alt="" width="200" height="200" /><Image src={hexagon} alt="" width="231" height="200" /></div>
                 <h3>Shapes that <em>will not</em> tessellate</h3>
                 <div className={styles.shapeHolder} ><Image src={pentagon} alt="" width="210px" height="200px" /><Image src={heptagon} alt="" width="205px" height="200px" /></div>
             </div>
@@ -102,19 +99,13 @@ class Explanation extends React.Component {
 }
 
 export default class Tessellation extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            game: true,
-        }
-    }
     render() {
         return (
             <div className={styles.fsuHolder}>
                 <h1>Tessellation</h1>
                 <div className={styles.colors}>
-                    <Explanation />
-                    <Sketch className={styles.canvas} setup={setup} draw={draw} red={255} />
+                    <Explanation tessellate={this.tessellate} />
+                    <Sketch className={styles.canvas} setup={setup} draw={draw} />
                 </div>
             </div>
         );

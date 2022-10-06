@@ -557,13 +557,14 @@
 }
 
 .mandelbrot {
-  background-color: rgb(63, 63, 63);
+  background-color: rgb(127, 127, 127);
   color: white;
   font-size: 20px;
-  padding: 50px 65px 15px 65px;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-width: 1200px;
 }
 
 .mandelbrot > p {
@@ -579,7 +580,7 @@
 }
 
 .welcome {
-  max-width: 750px;
+  max-width: 1400px;
   padding: 10px;
 }
 

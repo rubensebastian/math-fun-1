@@ -4,4 +4,8 @@ body {
 
 * {
     box-sizing: border-box;
-  }
+}
+
+a {
+    color: rgb(41, 84, 255);
+}
