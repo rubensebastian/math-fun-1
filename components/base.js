@@ -8,7 +8,7 @@ class Fractal extends React.Component {
             return (
                 <div className={styles.mandelbrot}>
                     <Image src={mandelbrot} alt="the mandelbrot set is a structure that repeats infinitely as you zoom in" />
-                    <p><a href="https://commons.wikimedia.org/w/index.php?curid=321973">Mandelbrot Set</a> created by <a href="//commons.wikimedia.org/wiki/User:Wolfgangbeyer" title="User:Wolfgangbeyer"> Wolfgang Beyer</a>; with the program Ultra Fractal 3. - <span class="int-own-work" lang="en">Own work</span>, <a href="http://creativecommons.org/licenses/by-sa/3.0/" title="Creative Commons Attribution-Share Alike 3.0">CC BY-SA 3.0</a>.</p>
+                    <p><a href="https://commons.wikimedia.org/w/index.php?curid=321973">Mandelbrot Set</a> created by <a href="//commons.wikimedia.org/wiki/User:Wolfgangbeyer" title="User:Wolfgangbeyer"> Wolfgang Beyer</a>; with the program Ultra Fractal 3. - Own work, <a href="http://creativecommons.org/licenses/by-sa/3.0/" title="Creative Commons Attribution-Share Alike 3.0">CC BY-SA 3.0</a>.</p>
                 </div>
             );
     }
