@@ -408,31 +408,47 @@
 
 .mineCovered {
   background-color: rgb(135, 135, 135);
+  color: black;
   width: 25px;
   height: 25px;
-  margin: 3px;
+  margin: .25px;
   display: inline-block;
-  border: 2px solid black;
+  border: 1px solid black;
+}
+.mineFlag {
+  background-color: red;
+  color: red;
+  width: 25px;
+  height: 25px;
+  margin: .25px;
+  display: inline-block;
+  border: 1px solid black;
 }
 
 .mineCovered:active {
   background-color: rgb(65, 65, 65);
   width: 25px;
   height: 25px;
-  margin: 3px;
+  margin: .25px;
   display: inline-block;
   border: none;
 }
 
 .mineExposed {
+  background-color: rgb(191, 191, 191);
+  color: black;
+  width: 25px;
+  height: 25px;
+  margin: .25px;
+  display: inline-block;
   border: 1px solid black;
 }
+
+/*
+  Add another class for mineExposed:active for when you chain cells
+*/
 
 .mineBomb {
-  border: 1px solid black;
-}
-
-.mineFlagged {
   border: 1px solid black;
 }
 
