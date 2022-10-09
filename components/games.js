@@ -1,49 +1,22 @@
 import React from "react";
 import styles from "./layout.module.css";
 import Link from 'next/link';
+import Infocard from "./infocard";
 
 
 export default class Games extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            game: true,
-        }
-    }
     render() {
         return (
-            <div>
-                <div>
-                    <Link href="/games/nim">
-                        <a>Nim Game</a>
-                    </Link>
-                </div>
+            <div className={styles.vertical}>
+                <h1>Math Games</h1>
+                <div className={styles.infoCardHolder}>
+                    <Infocard title="Nim" description="This is about Nim" linkDestination="/games/nim" />
+                    <Infocard title="Nim Variation" description="This is about Nim Variation" linkDestination="/games/nim2" />
+                    <Infocard title="Minesweeper (In Progress)" description="This is about Minesweeper" linkDestination="/games/mines" />
+                    <Infocard title="Card Switching" description="This is about Card Switching" linkDestination="/games/cards" />
+                    <Infocard title="Nonograms (In Progress)" description="This is about Nonograms" linkDestination="/games/nonogram" />
 
-                <div>
-                    <Link href="/games/nim2">
-                        <a>Nim Variation</a>
-                    </Link>
-                </div>
-
-                <div>
-                    <Link href="/games/mines">
-                        <a>Minesweeper (In Progress)</a>
-                    </Link>
-                </div>
-
-                <div>
-                    <Link href="/games/cards">
-                        <a>Card Switching</a>
-                    </Link>
-                </div>
-
-                <div>
-                    <Link href="/games/nonogram">
-                        <a>Nonograms</a>
-                    </Link>
-                </div>
-
-                {/* <div>
+                    {/* <div>
                     <Link href="/games/tictactoe">
                         <a>Tic Tac Toe (Computer Play needed)</a>
                     </Link>
@@ -60,7 +33,8 @@ export default class Games extends React.Component {
                         <a>Dots and Boxes (Computer Play needed)</a>
                     </Link>
                 </div> */}
+                </div>
             </div>
-        )
+        );
     }
 }

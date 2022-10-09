@@ -608,6 +608,31 @@
   justify-content: center;
 }
 
+.infoCardHolder {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.infoCard {
+  background-color: black;
+  color: white;
+  width: 500px;
+  padding: .75em 1.5em;
+  margin: 10px 10px;
+  border-radius: 1.5em;
+}
+
+.infoCard > h2 {
+  margin-top: .15em;
+  margin-bottom: .15em;
+}
+
+.infoCard > p {
+  margin-top: .15em;
+  margin-bottom: .15em;
+}
+
 
 
 
