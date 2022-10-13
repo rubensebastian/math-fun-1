@@ -652,6 +652,18 @@
   background-repeat: no-repeat;
 }
 
+.factClose {
+  position: absolute;
+  font-size: 20px;
+  text-align: center;
+  top: 25px;
+  right: 20px;
+  color: white;
+  background-color: black;
+  border-radius: 50%;
+  border: none;
+}
+
 
 
 

@@ -2,6 +2,10 @@ import React from "react";
 import styles from "../components/layout.module.css";
 
 export default class Fact extends React.Component {
+hideFact = () => {
+    document.getElementById("factContainer").hidden = true;
+}
+
     render() {
         let textContent;
         if (this.props.textContent == 0) {
@@ -35,8 +39,9 @@ export default class Fact extends React.Component {
             textContent = "Maryam Mirzakhani was an Iranian mathematician and math professor at Stanford University. In high school, Mirzakhani and her best friend became the first Iranian women to qualify for the Mathematical Olympiad."
         }
         return (
-            <div className={styles.factContainer}>
-                <p className={styles.fact}><span className={styles.largerText}><strong>Math Fun Fact</strong></span><br></br>{textContent}</p>
+            <div id="factContainer" className={styles.factContainer}>
+                <p hidden={false} className={styles.fact}><span className={styles.largerText}><strong>Math Fun Fact</strong></span><br></br>{textContent}</p>
+                <button aria-label="Hide the math fun facts window" onClick={this.hideFact} className={styles.factClose}>&times;</button>
             </div>
         );
     }

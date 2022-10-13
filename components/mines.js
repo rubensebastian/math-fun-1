@@ -7,8 +7,6 @@ const Fact = dynamic(
     { ssr: false }
 )
 
-
-
 class MineSquare extends React.Component {
     render() {//run checkbomb every time button is clicked
         return (
