@@ -1,5 +1,11 @@
 import React from "react";
 import styles from "./layout.module.css";
+import dynamic from 'next/dynamic'
+
+const Fact = dynamic(
+    () => import('./facts'),
+    { ssr: false }
+)
 
 let deck = [
     -12, -12,
@@ -141,15 +147,15 @@ export default class Table extends React.Component {
             playerPoints: state.playerPoints + playerAdd,
             computerPoints: state.computerPoints + computerAdd,
         }));
-        if(deck.length == 52){//deck gets reset before this function runs, so this is when the deck is "empty"
-            if(this.state.playerPoints > this.state.computerPoints){
-                this.setState({winner: "You win!"})
+        if (deck.length == 52) {//deck gets reset before this function runs, so this is when the deck is "empty"
+            if (this.state.playerPoints > this.state.computerPoints) {
+                this.setState({ winner: "You win!" })
             }
-            if(this.state.playerPoints < this.state.computerPoints){
-                this.setState({winner: "Computer wins..."})
+            if (this.state.playerPoints < this.state.computerPoints) {
+                this.setState({ winner: "Computer wins..." })
             }
-            if(this.state.playerPoints == this.state.computerPoints){
-                this.setState({winner: "Tie Game"})
+            if (this.state.playerPoints == this.state.computerPoints) {
+                this.setState({ winner: "Tie Game" })
             }
         }
     }
@@ -164,7 +170,7 @@ export default class Table extends React.Component {
     fillCards = () => {
         let values = [this.getValue(), this.getValue(), this.getValue(), this.getValue()];
 
-        if(this.state.winner){
+        if (this.state.winner) {
             this.setState({
                 winner: null,
                 playerPoints: 0,
@@ -200,10 +206,9 @@ export default class Table extends React.Component {
                         <p>Your Score: {this.state.playerPoints} || Computer Score: {this.state.computerPoints}</p>
                         <p>{this.state.winner}</p>
                     </div>
-                    <div>
-                        <Holder valueOne={this.state.cardValues[0]} valueTwo={this.state.cardValues[1]} valueThree={this.state.cardValues[2]} valueFour={this.state.cardValues[3]} swap={this.swapCards} hideCard={this.state.hideCard} />
-                    </div>
+                    <Holder valueOne={this.state.cardValues[0]} valueTwo={this.state.cardValues[1]} valueThree={this.state.cardValues[2]} valueFour={this.state.cardValues[3]} swap={this.swapCards} hideCard={this.state.hideCard} />
                 </div>
+                <Fact textContent={Math.floor(Math.random() * 10)} />
             </div>
         );
     }

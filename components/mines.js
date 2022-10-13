@@ -1,5 +1,13 @@
 import React from "react";
 import styles from "./layout.module.css";
+import dynamic from "next/dynamic";
+
+const Fact = dynamic(
+    () => import('./facts'),
+    { ssr: false }
+)
+
+
 
 class MineSquare extends React.Component {
     render() {//run checkbomb every time button is clicked
@@ -163,6 +171,7 @@ export default class Minesweeper extends React.Component {
                     </div>
                     <Board chooseCell={this.checkCell} values={this.state.cellValues} shown={this.state.shown} flagCell={this.flagCell} />
                 </div>
+                <Fact textContent={Math.floor(Math.random() * 10)} />
             </div>
         );
     }

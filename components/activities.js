@@ -12,7 +12,8 @@ export default class Activities extends React.Component {
                     <Infocard title="Caesar Cipher" description="This is about Caesar Cipher" linkDestination="/activities/caesar-cipher" />
                     <Infocard title="Target Number" description="This is about Target Number" linkDestination="/activities/target" />
                     <Infocard title="Numbers in Art" description="This is about Numbers in Art" linkDestination="/activities/colors" />
-                    <Infocard title="Tessellation" description="This is about Tessellation" linkDestination="/activities/tessellation" />
+                    <Infocard title="Tessellation (In progress)" description="This is about Tessellation" linkDestination="/activities/tessellation" />
+                    <Infocard title="Line Tour (In progress)" description="This is about Line Tour" linkDestination="/activities/tour" />
                 </div>
             </div>
         );

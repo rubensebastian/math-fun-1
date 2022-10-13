@@ -1,5 +1,13 @@
 import React from "react";
 import styles from "./layout.module.css";
+import dynamic from "next/dynamic";
+
+const Fact = dynamic(
+    () => import('./facts'),
+    { ssr: false }
+  )
+  
+  
 
 class Checker extends React.Component {
     render() {
@@ -206,6 +214,7 @@ export default class Connect extends React.Component {
                         <div>{this.state.winner}{this.state.winner ? " wins!" : null}</div>
                     </div>
                 </div>
+                <Fact textContent={Math.floor(Math.random() * 10)} />
             </div>
         );
     }

@@ -1,5 +1,11 @@
 import React from "react";
 import styles from "./layout.module.css";
+import dynamic from "next/dynamic";
+
+const Fact = dynamic(
+  () => import('./facts'),
+  { ssr: false }
+)
 
 function Letters(props) {
   let letterBoxes = [];
@@ -145,6 +151,7 @@ export default class GameBoard extends React.Component {
             <Encoded message={this.state.message} shift={this.state.shift} />
           </div>
         </div>
+        <Fact textContent={Math.floor(Math.random() * 10)} />
       </div>
     );
   }

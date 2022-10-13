@@ -1,5 +1,13 @@
 import React from "react";
 import styles from "./layout.module.css";
+import dynamic from "next/dynamic";
+
+const Fact = dynamic(
+    () => import('./facts'),
+    { ssr: false }
+)
+
+
 
 class Line extends React.Component {
     render() {
@@ -95,8 +103,8 @@ export default class DotBox extends React.Component {
     checkWin = () => {
         let humanCount = 0;
         let computerCount = 0;
-        for(let i = 0; i < 9; i++){
-            if(this.state.boxes[i] == null){
+        for (let i = 0; i < 9; i++) {
+            if (this.state.boxes[i] == null) {
                 return;
             }
             this.state.boxes[i] == "human" ? humanCount++ : computerCount++;
@@ -108,7 +116,7 @@ export default class DotBox extends React.Component {
     takeTurn = (lineIndex) => {
         let linesCopy = this.state.lines;
         linesCopy[lineIndex] = this.state.humanTurn ? "human" : "computer";
-        this.setState({lines: linesCopy});
+        this.setState({ lines: linesCopy });
         this.checkBoxes();
         this.setState(state => ({
             humanTurn: !state.humanTurn
@@ -142,6 +150,7 @@ export default class DotBox extends React.Component {
             <div>
                 {this.renderGrid()}
                 <p className={styles.centerText} hidden={true} id="winner" ></p>
+                <Fact textContent={Math.floor(Math.random() * 10)} />
             </div>
         );
     }

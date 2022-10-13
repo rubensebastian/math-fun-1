@@ -7,6 +7,12 @@ import square from '../assets/square.png'
 import pentagon from '../assets/pentagon.png'
 import hexagon from '../assets/hexagon.png'
 import heptagon from '../assets/heptagon.png'
+import dynamic from "next/dynamic";
+
+const Fact = dynamic(
+    () => import('./facts'),
+    { ssr: false }
+)
 
 //consider making the values for the fill colors in an array
 let showTessellation;
@@ -107,6 +113,7 @@ export default class Tessellation extends React.Component {
                     <Explanation tessellate={this.tessellate} />
                     <Sketch className={styles.canvas} setup={setup} draw={draw} />
                 </div>
+                <Fact textContent={Math.floor(Math.random() * 10)} />
             </div>
         );
     }

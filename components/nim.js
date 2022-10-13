@@ -2,6 +2,12 @@ import React from "react";
 import styles from "./layout.module.css";
 import Image from 'next/image'
 import candy from '../assets/candy.png'
+import dynamic from "next/dynamic";
+
+const Fact = dynamic(
+    () => import('./facts'),
+    { ssr: false }
+)
 
 class Explanation extends React.Component {
     render() {
@@ -100,8 +106,8 @@ class Board extends React.Component {
         }
 
         return (
-            <div>
-                <h1 className={styles.heading1}>Nim</h1>
+            <div className={styles.vertical}>
+                <h1>Nim</h1>
                 <div className={styles.horizontal}>
                     <div className={styles.info}>
                         <Explanation show={!this.state.firstTurn} />
@@ -116,6 +122,7 @@ class Board extends React.Component {
                     </div>
                     <div className={styles.stoneBorder} >{stones}</div>
                 </div>
+                <Fact textContent={Math.floor(Math.random() * 10)} />
             </div>
         );
     }

@@ -4,8 +4,14 @@ import dynamic from 'next/dynamic'
 
 // Will only import `react-p5` on client-side
 const Sketch = dynamic(() => import('react-p5').then((mod) => mod.default), {
-  ssr: false,
+    ssr: false,
 })
+
+const Fact = dynamic(
+    () => import('./facts'),
+    { ssr: false }
+)
+
 
 let red = 255;
 let green = 255;
@@ -24,7 +30,7 @@ const draw = (p5) => {
         p5.stroke(red, green, blue);
         p5.ellipse(p5.mouseX, p5.mouseY, 50, 50);
     }
-    if(fill == true){
+    if (fill == true) {
         p5.background(red, green, blue);
     }
 };
@@ -56,15 +62,15 @@ class Sliders extends React.Component {
     changeColor = (color) => {
         if (color == "red") {
             red = document.getElementById("red").value;
-            this.setState({red: red})
+            this.setState({ red: red })
         }
         if (color == "green") {
             green = document.getElementById("green").value;
-            this.setState({green: green})
+            this.setState({ green: green })
         }
         if (color == "blue") {
             blue = document.getElementById("blue").value;
-            this.setState({blue: blue})
+            this.setState({ blue: blue })
         }
     }
 
@@ -113,6 +119,7 @@ export default class Colors extends React.Component {
                     <Sketch className={styles.canvas} setup={setup} draw={draw} />
                     <Sliders />
                 </div>
+                <Fact textContent={Math.floor(Math.random() * 10)} />
             </div>
         );
     }

@@ -1,5 +1,13 @@
 import React from "react";
 import styles from "./layout.module.css";
+import dynamic from "next/dynamic";
+
+const Fact = dynamic(
+  () => import('./facts'),
+  { ssr: false }
+)
+
+
 
 let possibleWins = [
   [0, 1, 2],
@@ -42,12 +50,12 @@ export default class TicBoard extends React.Component {
       }
     }
 
-    for(let position of this.state.squares){
-      if(position == null){
+    for (let position of this.state.squares) {
+      if (position == null) {
         return;
       }
     }
-    this.setState({win: false});
+    this.setState({ win: false });
   }
 
   chooseSquare = (position) => {
@@ -91,6 +99,7 @@ export default class TicBoard extends React.Component {
         </div>
         <div><button onClick={this.resetGame}>Reset Game</button></div>
         {this.state.win === null ? null : this.state.win === false ? <p>Draw Game</p> : this.state.playerTurn ? <p>Player wins!</p> : <p>Computer wins!</p>}
+        <Fact textContent={Math.floor(Math.random() * 10)} />
       </div>
     );
   }

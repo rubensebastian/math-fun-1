@@ -1,11 +1,19 @@
 import React from "react";
 import styles from "./layout.module.css";
+import dynamic from "next/dynamic";
+
+const Fact = dynamic(
+    () => import('./facts'),
+    { ssr: false }
+)
+
+
 
 let operations = ["+", "-", "*"]
 
 class Explanation extends React.Component {
-    render () {
-        return(
+    render() {
+        return (
             <div className={styles.targetExplanation}>
                 <h2 className={styles.targetHeading}>How to Play</h2>
                 <p>Begin by selecting your difficulty level. Random numbers will be generated, along with a target value. Using basic operations (addtion, subtraction, multiplication), combine the numbers to reach the target value.</p>
@@ -144,6 +152,7 @@ export default class Target extends React.Component {
                 </div>
                 <Calculator shown={this.state.calculatorShown} values={this.state.values} target={this.state.targetValue} level={this.state.level} />
                 <Explanation />
+                <Fact textContent={Math.floor(Math.random() * 10)} />
             </div>
         )
     }
