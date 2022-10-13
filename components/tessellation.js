@@ -7,7 +7,6 @@ import square from '../assets/square.png'
 import pentagon from '../assets/pentagon.png'
 import hexagon from '../assets/hexagon.png'
 import heptagon from '../assets/heptagon.png'
-import dynamic from "next/dynamic";
 
 const Fact = dynamic(
     () => import('./facts'),
