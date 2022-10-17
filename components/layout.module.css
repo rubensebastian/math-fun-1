@@ -399,11 +399,9 @@
   background-color: #fff;
 }
 
-.mineMenu {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
+.minesBorder {
+  background-color: black;
+  border: 2px solid black;
 }
 
 .mineCovered {
@@ -411,9 +409,9 @@
   color: black;
   width: 25px;
   height: 25px;
-  margin: .25px;
+  margin: 0px;
   display: inline-block;
-  border: 1px solid black;
+  border: .5px solid black;
 }
 
 .mineFlag {
@@ -421,18 +419,18 @@
   color: red;
   width: 25px;
   height: 25px;
-  margin: .25px;
+  margin: 0px;
   display: inline-block;
-  border: 1px solid black;
+  border: .5px solid black;
 }
 
 .mineCovered:active {
   background-color: rgb(65, 65, 65);
   width: 25px;
   height: 25px;
-  margin: .25px;
+  margin: 0px;
   display: inline-block;
-  border: none;
+  border: .5px solid black;
 }
 
 .mineExposed {
@@ -440,9 +438,9 @@
   color: black;
   width: 25px;
   height: 25px;
-  margin: .25px;
+  margin: 0px;
   display: inline-block;
-  border: 1px solid black;
+  border: .5px solid black;
 }
 
 /*

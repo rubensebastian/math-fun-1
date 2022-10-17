@@ -49,7 +49,7 @@ class Board extends React.Component {
             remainingStones: 25,
             playerTurn: true,
             lastTaken: null,
-            firstTurn: false,
+            firstTurn: true,
         };
     }
 

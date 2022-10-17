@@ -8,7 +8,7 @@ const Fact = dynamic(
 )
 
 class MineSquare extends React.Component {
-    render() {//run checkbomb every time button is clicked
+    render() {
         return (
             <button id={this.props.row * 16 + this.props.col} onClick={() => this.props.checkCell(this.props.row, this.props.col, window.event)} onContextMenu={() => this.props.flagCell(this.props.row, this.props.col, window.event)} contextMenu={false} className={styles.mineCovered}>{this.props.showValue === true ? this.props.value[this.props.row * 16 + this.props.col] === 0 ? null : this.props.value[this.props.row * 16 + this.props.col] == -1 ? "B" : this.props.value[this.props.row * 16 + this.props.col] : this.props.showValue === false ? "F" : null}</button>
         )//replace the words "F" and "B" above with images
@@ -26,7 +26,7 @@ class Board extends React.Component {
             mines.push(<div className={styles.mineRows}>{tempRow}</div>)
         }
         return (
-            <div>{mines}</div>
+            <div className={styles.minesBorder}>{mines}</div>
         )
     }
 }
@@ -39,26 +39,95 @@ export default class Minesweeper extends React.Component {
             cellValues: Array(256).fill(null),
             shown: Array(256).fill(null),
             firstMove: true,
+            remainingBombs: 40,
+            win: null,
         }
     }
 
+    showOtherCells = (currentMoveValue, cellValueArray) => {
+        let newFound = true;
+        let shownCellsCopy = [...this.state.shown];
+        shownCellsCopy[currentMoveValue] = true;
+
+
+        while (newFound) {
+            newFound = false;
+
+            for (let i = 0; i < 256; i++) {
+                let rowNumber = Math.floor(i / 16);
+                let colNumber = i % 16;
+
+                if (rowNumber > 0 && shownCellsCopy[i] !== true) {//check above
+                    if (shownCellsCopy[i - 16] === true && cellValueArray[i - 16] === 0) {
+                        shownCellsCopy[i] = true;
+                        document.getElementById(i).className = styles.mineExposed;
+                        newFound = true;
+                    }
+                }
+                if (rowNumber < 15 && shownCellsCopy[i] !== true) {//check below
+                    if (shownCellsCopy[i + 16] === true && cellValueArray[i + 16] === 0) {
+                        shownCellsCopy[i] = true;
+                        document.getElementById(i).className = styles.mineExposed;
+                        newFound = true;
+                    }
+                }
+                if (colNumber > 0 && shownCellsCopy[i] !== true) {//check left
+                    if (shownCellsCopy[i - 1] === true && cellValueArray[i - 1] === 0) {
+                        shownCellsCopy[i] = true;
+                        document.getElementById(i).className = styles.mineExposed;
+                        newFound = true;
+                    }
+                }
+                if (colNumber < 15 && shownCellsCopy[i] !== true) {//check right
+                    if (shownCellsCopy[i + 1] === true && cellValueArray[i + 1] === 0) {
+                        shownCellsCopy[i] = true;
+                        document.getElementById(i).className = styles.mineExposed;
+                        newFound = true;
+                    }
+                }
+            }
+        }
+        this.setState({
+            shown: [...shownCellsCopy],
+        });
+    }//add in the diagonals
+
     flagCell = (row, column, event) => {
+        if (this.state.win !== null) {
+            event.preventDefault();
+            return;
+        }
         let shownCopy = [...this.state.shown];
         if (shownCopy[row * 16 + column] == null) {
             shownCopy[row * 16 + column] = false;
             document.getElementById(row * 16 + column).className = styles.mineFlag;
+            this.setState(state => ({
+                shown: [...shownCopy],
+                remainingBombs: state.remainingBombs - 1,
+            }));
         } else if (shownCopy[row * 16 + column] == false) {
             shownCopy[row * 16 + column] = null;
             document.getElementById(row * 16 + column).className = styles.mineCovered;
-        }
+            this.setState(state => ({
+                shown: [...shownCopy],
+                remainingBombs: state.remainingBombs + 1,
+            }));
+        }//add in logic for chaining adjacent cells based on flags MAYBE
         this.setState({
             shown: [...shownCopy],
         });
         event.preventDefault();
     }
 
+    // flagCell = (row, column, event) => {
+    //     event.preventDefault();
+    //     console.log(row * 16 + column);
+    //     console.log(this.state.cellValues[row * 16 + column]);
+    //     console.log(this.state.shown[row * 16 + column]);
+    // }
+
     checkCell = (row, column, event) => {
-        if (this.state.shown[row * 16 + column] === false) {
+        if (this.state.shown[row * 16 + column] === false || this.state.win !== null) {
             event.preventDefault();
             return;
         }
@@ -71,13 +140,14 @@ export default class Minesweeper extends React.Component {
             let bombPositionsValue = row * 16 + column;
             let showCell = [...this.state.shown];
             let values = [...this.state.cellValues];
+
             if (this.state.firstMove === true) {
                 let bombP = Array(256).fill("Clear");//array that will be copied into this.state.bombPositions
                 let placed = 0;//tracks how many bombs have been placed
                 let bombPlacement;//random number to insert into the this.state.bombPositions array
                 while (placed < 40) {
                     bombPlacement = Math.floor(Math.random() * 256);
-                    if (bombPlacement != bombPositionsValue && bombPlacement != bombPositionsValue - 1 && bombPlacement != bombPositionsValue + 1 && bombPlacement != bombPositionsValue - 16 && bombPlacement != bombPositionsValue + 16 & bombPlacement != bombPositionsValue - 15 && bombPlacement != bombPositionsValue + 15 && bombPlacement != bombPositionsValue - 17 && bombPlacement != bombPositionsValue + 17) {
+                    if (bombPlacement != bombPositionsValue && bombPlacement != bombPositionsValue - 1 && bombPlacement != bombPositionsValue + 1 && bombPlacement != bombPositionsValue - 16 && bombPlacement != bombPositionsValue + 16 & bombPlacement != bombPositionsValue - 15 && bombPlacement != bombPositionsValue + 15 && bombPlacement != bombPositionsValue - 17 && bombPlacement != bombPositionsValue + 17 && bombP[bombPlacement] !== "Bomb") {
                         bombP[bombPlacement] = "Bomb";
                         placed++;
                     }
@@ -131,30 +201,62 @@ export default class Minesweeper extends React.Component {
                         values[i] = nearbyBombs;
                     }
                 }
+
                 showCell[bombPositionsValue] = true;
+                document.getElementById(row * 16 + column).className = styles.mineExposed;
+
                 this.setState({
                     bombPositions: [...bombP],
                     shown: [...showCell],
                     firstMove: false,
                     cellValues: [...values],
                 });
-            }//end of first turn bomb distribution
-            showCell[bombPositionsValue] = true;
-            document.getElementById(row * 16 + column).className = styles.mineExposed;
 
-            // if (this.state.cellValues[row * 16 + column] == 0) {
-            //     this.checkCell(row - 1, column);
-            //     this.checkCell(row - 1, column - 1);
-            //     this.checkCell(row - 1, column + 1);
-            //     this.checkCell(row + 1, column);
-            //     this.checkCell(row + 1, column - 1);
-            //     this.checkCell(row + 1, column + 1);
-            //     this.checkCell(row, column - 1);
-            //     this.checkCell(row, column + 1);
-            // } // figure out more efficient way to check touching cells, account for out of bounds, and don't check cells that are already opened
-            this.setState({
-                shown: [...showCell],
-            });
+                this.showOtherCells(bombPositionsValue, [...values]);
+            }//end of first turn bomb distribution
+            else {
+                if (values[bombPositionsValue] == -1) {
+                    this.setState({
+                        win: false,
+                    });
+                }//selecting a bomb ends the game
+
+                showCell[bombPositionsValue] = true;
+                document.getElementById(row * 16 + column).className = styles.mineExposed;
+
+                this.setState({
+                    shown: [...showCell],
+                });
+
+                if (values[bombPositionsValue] == 0) {
+                    this.showOtherCells(bombPositionsValue, [...values]);
+                }
+
+                let checkWin = [...this.state.shown];
+                for (let i = 0; i < checkWin.length; i++) {
+                    if (checkWin[i] === null && this.state.cellValues[i] !== -1 && i !== row * 16 + column) {
+                        return;
+                    }
+                }//returns if the game hasn't been won
+                this.setState({
+                    win: true,
+                })//if not returned already, sets game to win
+            }
+        }
+    }
+
+    newGame = () => {
+        this.setState({
+            bombPositions: Array(256).fill(null),//array of true/false where bombs are
+            cellValues: Array(256).fill(null),
+            shown: Array(256).fill(null),
+            firstMove: true,
+            remainingBombs: 40,
+            win: null,
+        })
+
+        for (let i = 0; i < 256; i++) {
+            document.getElementById(i).className = styles.mineCovered;
         }
     }
 
@@ -162,10 +264,16 @@ export default class Minesweeper extends React.Component {
         return (
             <div className={styles.vertical}>
                 <h1>Minesweeper</h1>
+                <div>
+                    <p>Remaining Bombs: {this.state.remainingBombs}</p>
+                    <p hidden={this.state.win === null}>{this.state.win === true ? "You win!" : "You lose..."}</p>
+                </div>
                 <div className={styles.horizontal}>
                     <div className={styles.info}>
                         <h2><i>How to Play</i></h2>
                         <p>This is how to play</p>
+                        <button onClick={this.newGame} className={styles.btn}>Start New Game</button>
+                        <button onClick={this.showOtherCells}>Show other cells</button>
                     </div>
                     <Board chooseCell={this.checkCell} values={this.state.cellValues} shown={this.state.shown} flagCell={this.flagCell} />
                 </div>
