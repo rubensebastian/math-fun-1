@@ -63,12 +63,40 @@ export default class Minesweeper extends React.Component {
                         document.getElementById(i).className = styles.mineExposed;
                         newFound = true;
                     }
+                    if (colNumber > 0) {//above and left
+                        if (shownCellsCopy[i - 17] === true && cellValueArray[i - 17] === 0) {
+                            shownCellsCopy[i] = true;
+                            document.getElementById(i).className = styles.mineExposed;
+                            newFound = true;
+                        }
+                    }
+                    if (colNumber < 15) {//above and right
+                        if (shownCellsCopy[i - 15] === true && cellValueArray[i - 15] === 0) {
+                            shownCellsCopy[i] = true;
+                            document.getElementById(i).className = styles.mineExposed;
+                            newFound = true;
+                        }
+                    }
                 }
                 if (rowNumber < 15 && shownCellsCopy[i] !== true) {//check below
                     if (shownCellsCopy[i + 16] === true && cellValueArray[i + 16] === 0) {
                         shownCellsCopy[i] = true;
                         document.getElementById(i).className = styles.mineExposed;
                         newFound = true;
+                    }
+                    if (colNumber > 0) {//below and left
+                        if (shownCellsCopy[i + 15] === true && cellValueArray[i + 15] === 0) {
+                            shownCellsCopy[i] = true;
+                            document.getElementById(i).className = styles.mineExposed;
+                            newFound = true;
+                        }
+                    }
+                    if (colNumber < 15) {//below and right
+                        if (shownCellsCopy[i + 17] === true && cellValueArray[i + 17] === 0) {
+                            shownCellsCopy[i] = true;
+                            document.getElementById(i).className = styles.mineExposed;
+                            newFound = true;
+                        }
                     }
                 }
                 if (colNumber > 0 && shownCellsCopy[i] !== true) {//check left
@@ -118,13 +146,6 @@ export default class Minesweeper extends React.Component {
         });
         event.preventDefault();
     }
-
-    // flagCell = (row, column, event) => {
-    //     event.preventDefault();
-    //     console.log(row * 16 + column);
-    //     console.log(this.state.cellValues[row * 16 + column]);
-    //     console.log(this.state.shown[row * 16 + column]);
-    // }
 
     checkCell = (row, column, event) => {
         if (this.state.shown[row * 16 + column] === false || this.state.win !== null) {
@@ -271,9 +292,9 @@ export default class Minesweeper extends React.Component {
                 <div className={styles.horizontal}>
                     <div className={styles.info}>
                         <h2><i>How to Play</i></h2>
-                        <p>This is how to play</p>
+                        <p>This game of Minesweeper is played on a 16x16 grid. Each of those dark grey squares is called a cell. Some cells are covering bombs, and if you left-click one of those cells, you lose the game! To win, you must identify all the bombs by right-clicking them (they will turn red) and opening the other cells (they will turn light grey).</p>
+                        <p>So how can you tell which cells are bombs? Start by left-clicking one of the cells. This will &quot;open&quot; the surrounding cells. What do the numbers on the cells mean? If a cell is blank (no number), that means it is touching zero bombs in the surrounding eight cells. A cell has its number of bombs in the surrounding eight cells. Start playing to see if you can figure it out, or read below for the logic approach.</p>
                         <button onClick={this.newGame} className={styles.btn}>Start New Game</button>
-                        <button onClick={this.showOtherCells}>Show other cells</button>
                     </div>
                     <Board chooseCell={this.checkCell} values={this.state.cellValues} shown={this.state.shown} flagCell={this.flagCell} />
                 </div>
