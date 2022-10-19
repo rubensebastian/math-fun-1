@@ -19,7 +19,7 @@ export default class Template extends React.Component {
     render() {
         return (
             <div className={styles.vertical}>
-                <h1>Title</h1>
+                <h1><i>Title</i></h1>
                 <div className={styles.horizontal}>
                     <div className={styles.info}>
                         <h2>How to Play</h2>

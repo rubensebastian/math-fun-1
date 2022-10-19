@@ -7,8 +7,6 @@ const Fact = dynamic(
   { ssr: false }
 )
 
-
-
 let possibleWins = [
   [0, 1, 2],
   [3, 4, 5],
@@ -81,24 +79,32 @@ export default class TicBoard extends React.Component {
   render() {
     return (
       <div className={styles.vertical}>
-        <h1>Tic Tac Toe</h1>
-        <div className={styles.ticRow}>
-          <Square position={0} selection={this.state.squares[0]} selectSquare={() => this.chooseSquare(0)} />
-          <Square position={1} selection={this.state.squares[1]} selectSquare={() => this.chooseSquare(1)} />
-          <Square position={2} selection={this.state.squares[2]} selectSquare={() => this.chooseSquare(2)} />
+        <h1><i>Tic Tac Toe</i></h1>
+        <div className={styles.horizontal}>
+          <div className={styles.info}>
+            <h2>How to Play</h2>
+            <p>Explanation goes here</p>
+            <div><button onClick={this.resetGame}>Reset Game</button></div>
+            {this.state.win === null ? null : this.state.win === false ? <p>Draw Game</p> : this.state.playerTurn ? <p>Player wins!</p> : <p>Computer wins!</p>}
+          </div>
+          <div>
+            <div className={styles.ticRow}>
+              <Square position={0} selection={this.state.squares[0]} selectSquare={() => this.chooseSquare(0)} />
+              <Square position={1} selection={this.state.squares[1]} selectSquare={() => this.chooseSquare(1)} />
+              <Square position={2} selection={this.state.squares[2]} selectSquare={() => this.chooseSquare(2)} />
+            </div>
+            <div className={styles.ticRow}>
+              <Square position={3} selection={this.state.squares[3]} selectSquare={() => this.chooseSquare(3)} />
+              <Square position={4} selection={this.state.squares[4]} selectSquare={() => this.chooseSquare(4)} />
+              <Square position={5} selection={this.state.squares[5]} selectSquare={() => this.chooseSquare(5)} />
+            </div>
+            <div className={styles.ticRow}>
+              <Square position={6} selection={this.state.squares[6]} selectSquare={() => this.chooseSquare(6)} />
+              <Square position={7} selection={this.state.squares[7]} selectSquare={() => this.chooseSquare(7)} />
+              <Square position={8} selection={this.state.squares[8]} selectSquare={() => this.chooseSquare(8)} />
+            </div>
+          </div>
         </div>
-        <div className={styles.ticRow}>
-          <Square position={3} selection={this.state.squares[3]} selectSquare={() => this.chooseSquare(3)} />
-          <Square position={4} selection={this.state.squares[4]} selectSquare={() => this.chooseSquare(4)} />
-          <Square position={5} selection={this.state.squares[5]} selectSquare={() => this.chooseSquare(5)} />
-        </div>
-        <div className={styles.ticRow}>
-          <Square position={6} selection={this.state.squares[6]} selectSquare={() => this.chooseSquare(6)} />
-          <Square position={7} selection={this.state.squares[7]} selectSquare={() => this.chooseSquare(7)} />
-          <Square position={8} selection={this.state.squares[8]} selectSquare={() => this.chooseSquare(8)} />
-        </div>
-        <div><button onClick={this.resetGame}>Reset Game</button></div>
-        {this.state.win === null ? null : this.state.win === false ? <p>Draw Game</p> : this.state.playerTurn ? <p>Player wins!</p> : <p>Computer wins!</p>}
         <Fact textContent={Math.floor(Math.random() * 10)} />
       </div>
     );
