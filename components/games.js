@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./layout.module.css";
-import Link from 'next/link';
 import Infocard from "./infocard";
 
 
@@ -12,12 +11,11 @@ export default class Games extends React.Component {
                 <div className={styles.infoCardHolder}>
                     <Infocard title="Nim" description="This is about Nim" linkDestination="/games/nim" />
                     <Infocard title="Nim Variation" description="This is about Nim Variation" linkDestination="/games/nim2" />
-                    <Infocard title="Minesweeper (Description needed)" description="This is about Minesweeper" linkDestination="/games/mines" />
+                    <Infocard title="Minesweeper" description="This is about Minesweeper" linkDestination="/games/mines" />
                     <Infocard title="Card Switching" description="This is about Card Switching" linkDestination="/games/cards" />
-                    <Infocard title="Nonograms (Coding)" description="This is about Nonograms" linkDestination="/games/nonogram" />
-                    <Infocard title="Tic Tac Toe (Computer Play needed)" description="This is about Tic Tac Toe" linkDestination="/games/tictactoe" />
-
                     {/*
+                <Infocard title="Tic Tac Toe (Computer Play needed)" description="This is about Tic Tac Toe" linkDestination="/games/tictactoe" />
+
                 <div>
                     <Link href="/games/connect">
                         <a>Connect 4 (Computer Play needed)</a>

@@ -38,9 +38,12 @@ export default class TicBoard extends React.Component {
     }
   }
 
-  checkWin = () => {//add draw game as well to win: false
+  checkWin = (currentSquare) => {//add draw game as well to win: false
+    let stateCopy = [...this.state.squares];
+    stateCopy[currentSquare] = this.state.playerTurn ? "X" : "O";
+    console.log(stateCopy);
     for (let win of possibleWins) {
-      if (this.state.squares[win[0]] != null && this.state.squares[win[0]] == this.state.squares[win[1]] && this.state.squares[win[1]] == this.state.squares[win[2]]) {
+      if (stateCopy[win[0]] != null && stateCopy[win[0]] == stateCopy[win[1]] && stateCopy[win[1]] == stateCopy[win[2]]) {
         this.setState(state => ({
           win: true,
           playerTurn: !state.playerTurn
@@ -64,7 +67,7 @@ export default class TicBoard extends React.Component {
         squares: squaresCopy,
         playerTurn: !state.playerTurn,
       }));
-      this.checkWin();
+      this.checkWin(position);
     }
   }
 
@@ -84,7 +87,7 @@ export default class TicBoard extends React.Component {
           <div className={styles.info}>
             <h2>How to Play</h2>
             <p>Explanation goes here</p>
-            <div><button onClick={this.resetGame}>Reset Game</button></div>
+            <div><button className={styles.btn} onClick={this.resetGame}>Start New Game</button></div>
             {this.state.win === null ? null : this.state.win === false ? <p>Draw Game</p> : this.state.playerTurn ? <p>Player wins!</p> : <p>Computer wins!</p>}
           </div>
           <div>

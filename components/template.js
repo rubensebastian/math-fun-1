@@ -7,8 +7,6 @@ const Fact = dynamic(
     { ssr: false }
 )
 
-
-
 export default class Template extends React.Component {
     constructor(props) {
         super(props);

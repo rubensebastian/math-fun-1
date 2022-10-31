@@ -13,7 +13,7 @@ export default class Activities extends React.Component {
                     <Infocard title="Target Number" description="This is about Target Number" linkDestination="/activities/target" />
                     <Infocard title="Numbers in Art" description="This is about Numbers in Art" linkDestination="/activities/colors" />
                     <Infocard title="Tessellation (Description needed)" description="This is about Tessellation" linkDestination="/activities/tessellation" />
-                    <Infocard title="Line Tour (Coding)" description="This is about Line Tour" linkDestination="/activities/tour" />
+                    <Infocard title="Water Cups" description="This is about Water Cups" linkDestination="/activities/water" />
                 </div>
             </div>
         );

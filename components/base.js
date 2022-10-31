@@ -1,14 +1,13 @@
 import React from "react";
 import styles from "./layout.module.css";
 import Image from 'next/image';
-import mandelbrot from '../assets/mandelbrot.jpeg';
+import fun from '../assets/math fun.png';
 
 class Fractal extends React.Component {
     render() {
             return (
                 <div className={styles.mandelbrot}>
-                    <Image src={mandelbrot} alt="the mandelbrot set is a structure that repeats infinitely as you zoom in" />
-                    <p><a href="https://commons.wikimedia.org/w/index.php?curid=321973">Mandelbrot Set</a> created by <a href="//commons.wikimedia.org/wiki/User:Wolfgangbeyer" title="User:Wolfgangbeyer"> Wolfgang Beyer</a>; with the program Ultra Fractal 3. - Own work, <a href="http://creativecommons.org/licenses/by-sa/3.0/" title="Creative Commons Attribution-Share Alike 3.0">CC BY-SA 3.0</a>.</p>
+                    <Image src={fun} alt="the mandelbrot set is a structure that repeats infinitely as you zoom in" />
                 </div>
             );
     }

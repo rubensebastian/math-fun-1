@@ -127,11 +127,14 @@ class Explanation extends React.Component {
     render() {
         return (
             <div className={styles.info}>
-                <h2 className={styles.targetHeading}>How to Tessellate</h2>
-                <h3>Shapes that <em>will</em> tessellate</h3>
-                <div className={styles.shapeHolder} ><Image onClick={() => this.props.tessellate("triangle")} src={triangle} alt="" width="231px" height="200px" /><Image src={square} onClick={() => this.props.tessellate("square")} alt="" width="200" height="200" /><Image src={hexagon} alt="" width="231" height="200" onClick={() => this.props.tessellate("hexagon")} /></div>
-                <h3>Shapes that <em>will not</em> tessellate</h3>
-                <div className={styles.shapeHolder} ><Image src={pentagon} alt="" width="210px" height="200px" /><Image src={heptagon} alt="" width="205px" height="200px" /></div>
+                <p>You may be wondering what tessellation is. If so, you are on the right page. Tessellation is the arrangement of identical shapes without gaps or overlaps. But why do some shapes tessellate while others do not?</p>
+                <h2>Why Tessellation Works</h2>
+                <p>Content</p>
+                <h2>Shapes that <em>will</em> tessellate</h2>
+                <p>Content</p>
+                <div className={styles.shapeHolder} ><Image onClick={() => this.props.tessellate("triangle")} src={triangle} alt="" width="115px" height="100px" /><Image src={square} onClick={() => this.props.tessellate("square")} alt="" width="100" height="100" /><Image src={hexagon} alt="" width="115" height="100" onClick={() => this.props.tessellate("hexagon")} /></div>
+                <h2>Shapes that <em>will not</em> tessellate</h2>
+                <div className={styles.shapeHolder} ><Image src={pentagon} alt="" width="105px" height="100px" /><Image src={heptagon} alt="" width="103px" height="100px" /></div>
             </div>
         );
     }

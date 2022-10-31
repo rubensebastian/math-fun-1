@@ -1,5 +1,5 @@
-import Menu from '../components/menu';
-import Games from '../components/games';
+import Menu from '../../components/menu';
+import Activities from '../../components/activities';
 
 export default function NimBoard() {
     return(
@@ -8,7 +8,7 @@ export default function NimBoard() {
                 <Menu />
             </nav>
             <main>
-                <Games />
+                <Activities />
             </main>
         </div>
     );

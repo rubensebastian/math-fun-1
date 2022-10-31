@@ -178,7 +178,7 @@
 }
 
 .horizontal>div {
-  margin: auto 25px;
+  margin: auto 15px;
 }
 
 .nimButtonHolder {
@@ -208,7 +208,7 @@
 }
 
 .info {
-  max-width: 45%;
+  max-width: 800px;
   background-color: black;
   color: white;
   border: 2px solid black;
@@ -304,87 +304,6 @@
   height: 60vh;
 }
 
-.horizontalSplit {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-}
-
-.horizontalSplit>div {
-  margin: auto 50px;
-}
-
-.informationPanel {
-  padding: 30px;
-}
-
-.horizontalLine {
-  border: 1px dotted black;
-  fill: black;
-  height: 0px;
-  width: 150px;
-}
-
-.verticalLine {
-  border: 1px dotted black;
-  fill: black;
-  height: 150px;
-  width: 0px;
-}
-
-.verticalLineHuman {
-  background-color: blue;
-  height: 150px;
-  width: 10px;
-}
-
-.verticalLineComputer {
-  background-color: red;
-  height: 150px;
-  width: 10px;
-}
-
-.horizontalLineHuman {
-  background-color: blue;
-  height: 10px;
-  width: 150px;
-}
-
-.horizontalLineComputer {
-  background-color: red;
-  height: 10px;
-  width: 150px;
-}
-
-.horizontalLine:hover {
-  background-color: blue;
-  height: 10px;
-  width: 150px;
-}
-
-.verticalLine:hover {
-  background-color: blue;
-  height: 150px;
-  width: 10px;
-}
-
-.dot {
-  border: 2px solid black;
-  border-radius: 50%;
-  width: 20px;
-  height: 20px;
-}
-
-.dotBoxGrid {
-  display: grid;
-  grid-template-columns: 30px 160px 30px 160px 30px 160px 30px;
-  grid-template-rows: 30px 160px 30px 160px 30px 160px 30px;
-  align-items: center;
-  justify-items: center;
-  justify-content: center;
-}
-
 .centerText {
   text-align: center;
 }
@@ -407,8 +326,8 @@
 .mineCovered {
   background-color: rgb(135, 135, 135);
   color: black;
-  width: 25px;
-  height: 25px;
+  width: 30px;
+  height: 30px;
   margin: 0px;
   display: inline-block;
   border: .5px solid black;
@@ -417,8 +336,8 @@
 .mineFlag {
   background-color: red;
   color: red;
-  width: 25px;
-  height: 25px;
+  width: 30px;
+  height: 30px;
   margin: 0px;
   display: inline-block;
   border: .5px solid black;
@@ -426,8 +345,8 @@
 
 .mineCovered:active {
   background-color: rgb(65, 65, 65);
-  width: 25px;
-  height: 25px;
+  width: 30px;
+  height: 30px;
   margin: 0px;
   display: inline-block;
   border: .5px solid black;
@@ -436,16 +355,14 @@
 .mineExposed {
   background-color: rgb(191, 191, 191);
   color: black;
-  width: 25px;
-  height: 25px;
+  width: 30px;
+  height: 30px;
   margin: 0px;
   display: inline-block;
   border: .5px solid black;
+  font-size: 16px;
+  font-weight: 400;
 }
-
-/*
-  Add another class for mineExposed:active for when you chain cells
-*/
 
 .mineBomb {
   border: 1px solid black;
@@ -456,6 +373,12 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
+}
+
+.minePopup {
+  color: rgb(74, 74, 255);
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 .ticRow {
@@ -604,7 +527,11 @@
   flex-direction: row;
   background-color: white;
   padding: 10px;
-  justify-content: center;
+  justify-content: space-around;
+}
+
+.shapeHolder > Image {
+  margin: 30px;
 }
 
 .infoCardHolder {
