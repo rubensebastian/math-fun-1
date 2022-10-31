@@ -307,7 +307,7 @@ export default class Minesweeper extends React.Component {
                         <p><strong>Already found the bomb</strong>: For example, if a 2-cell is already touching exactly 2 bombs, you can clear the reamining cells. <a className={styles.minePopup} onClick={() => this.showImage("opening")}>Show <strong>Already found</strong> Example</a></p>
                         <p id="opening" hidden={true} ><Image src={opening} alt="" /></p>
                         <p><strong>1-2-1</strong>: If you have a row of numbers in order of 1-2-1, and the 2 has exactly 3 closed cells remaining, the center closed cell is never a bomb. Why does this work? Assume for contradiction that the middle cell is a bomb. Both of the 1-cells can be opened by &quot;Already found the bomb.&quot; There is is nowhere left to place the 2-cell&apos;s second bomb, so it&apos;s impossible. Thus, the middle cell cannot have a bomb. <a className={styles.minePopup} onClick={() => this.showImage("pattern")}>Show <strong>1-2-1</strong> Example</a></p>
-                        <p id="pattern" hidden={true} ><Image src={only} alt="" /></p>
+                        <p id="pattern" hidden={true} ><Image src={pattern} alt="" /></p>
                         <p><strong>Reduction</strong>: Let&apos;s say you have 2-3-2 in a row, but they are already all touching one bomb. That means the 2s have 1 bomb remaining, while the 3 has 2 bombs remaining. This has been reduced into a 1-2-1 situation, and you can apply that principle to this situation.</p>
                         <button onClick={this.newGame} className={styles.btn}>Start New Game</button>
                     </div>
