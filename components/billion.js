@@ -12,7 +12,7 @@ const Fact = dynamic(
 const Million = () => {
     return (
         <div>
-            <p>Now that you&apos;ve reach 1,000, you might be wondering how much one million is. As a number, it looks like 1,000,000. That&apos;s only a few more 0s, so it must not be that much larger than 1,000, right? You&apos;ll need to scroll down or zoom out to see just how big one million is (actual scale). The blue line is one thousand, and the yellow line is one million.</p>
+            <p>Now that you&apos;ve reached 1,000, you might be wondering how much one million is. As a number, it looks like 1,000,000. That&apos;s only a few more 0s, so it must not be that much larger than 1,000, right? You&apos;ll need to scroll down or zoom out to see just how big one million is (actual scale). The blue line is one thousand, and the yellow line is one million.</p>
             <div className={styles.moneyChart}>
                 <p>One Thousand__</p>
                 <p>One Million</p>
@@ -81,6 +81,13 @@ export default class Billion extends React.Component {
         this.setState({showBillion: true})
     }
 
+    skipAhead = () => {
+        this.setState({
+            counter: 1000,
+            showMillion: true
+        })
+    }
+
     render() {
         return (
             <div className={styles.vertical}>
@@ -91,11 +98,11 @@ export default class Billion extends React.Component {
                         {this.state.showMillion ? null : <p>Increase your candy amount to 1,000 to win!</p>}
                         {this.state.counter >= 100 && !this.state.showMillion ? <p>Now your candy will increase by 10 each time!</p> : null}
                         {this.state.showMillion ? null : <div className={styles.horizontal}><Image src={candy}></Image><p className={styles.extraLarge}>{this.state.counter}</p></div>}
-                        {this.state.showMillion ? null : <button onClick={this.increaseCount}>Increase Counter</button>}
+                        {this.state.showMillion ? null : <button className={styles.btn} onClick={this.increaseCount}>Increase Counter</button>}
+                        {this.state.showMillion ? null : <button className={styles.btn} onClick={this.skipAhead}>Just Show Me One Million</button>}
                         {this.state.showMillion && !this.state.showBillion ? <button onClick={this.showBillion} className={styles.btn}>Click to see how much one billion is</button>: null}
                         {this.state.showMillion && !this.state.showBillion ? <Million></Million> : null}
                         {this.state.showBillion ? <MilMillion></MilMillion> : null}
-
                     </div>
                 </div>
                 <Fact textContent={Math.floor(Math.random() * 10)} />
