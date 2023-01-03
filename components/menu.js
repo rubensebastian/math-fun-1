@@ -21,8 +21,7 @@ export default function Menu() {
             <p className={styles.largerText}>Created by <Link href='https://geoset.fsu.edu'><a className={styles.promoLink}>GEOSET</a></Link> in partnership with <Link href='https://math.fsu.edu'><a  className={styles.promoLink} >FSU Math</a></Link></p>
             <nav className={styles.menuContainer}>
                 <MenuLink location='' />
-                <MenuLink location='/games' locationName='Math Games' />
-                <MenuLink location='/activities' locationName='Interactive Math' />
+                <MenuLink location='/activities' locationName='Interactive Math & Games' />
                 <MenuLink location='/about' locationName='About' />
             </nav>
         </div>

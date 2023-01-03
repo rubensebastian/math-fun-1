@@ -17,19 +17,19 @@ const Sketch = dynamic(() => import('react-p5').then((mod) => mod.default), {
 });
 
 const fillBucket = (p5) => {//change these values once final design
-    if(700 <= p5.mouseX && p5.mouseX <= 800 && 50 <= p5.mouseY && p5.mouseY <= 100){
-        if(source == "faucet"){
+    if (700 <= p5.mouseX && p5.mouseX <= 800 && 50 <= p5.mouseY && p5.mouseY <= 100) {//faucet toggle
+        if (source == "faucet") {
             source = null;
             return;
         }
-        if(source == null){
+        if (source == null) {
             source = "faucet";
             return;
         }
     }
 
-    if(700 <= p5.mouseX && p5.mouseX <= 800 && 150 <= p5.mouseY && p5.mouseY <= 200){
-        if(source == "bucket1"){
+    if (700 <= p5.mouseX && p5.mouseX <= 800 && 150 <= p5.mouseY && p5.mouseY <= 200) {//trash can
+        if (source == "bucket1") {
             bucket1 = 0;
             p5.fill(255);
             p5.rect(180, 100, 100, 330);//clear the background
@@ -38,7 +38,7 @@ const fillBucket = (p5) => {//change these values once final design
             p5.fill(0);//new text value
             p5.text(bucket1 + " Gallons Full", 180, 75);
         }
-        if(source == "bucket2"){
+        if (source == "bucket2") {
             bucket2 = 0;
             p5.fill(255);
             p5.rect(450, 340, 100, 90);//clear the background
@@ -51,7 +51,10 @@ const fillBucket = (p5) => {//change these values once final design
     }
 
     if (180 <= p5.mouseX && p5.mouseX <= 280 && 100 <= p5.mouseY && p5.mouseY <= 430) {
-        if (source == null) {
+        if (source == null) {//add in golden line around
+            p5.noFill();
+            p5.stroke(255,255,0)
+            p5.rect(180, 100, 100, 330)
             source = "bucket1";
             return;
         }
@@ -60,14 +63,14 @@ const fillBucket = (p5) => {//change these values once final design
             return;
         }
 
-        if(bucket1 == 11) return;
+        if (bucket1 == 11) return;
 
         if (source == "bucket2") {
             p5.noStroke();
 
             let bucket1Copy = bucket1;
             bucket1 = bucket1 + bucket2 <= 11 ? bucket1 + bucket2 : 11;
-            bucket2 = bucket1Copy + bucket2 <= 11 ? 0 : 3- (11 - bucket1Copy);
+            bucket2 = bucket1Copy + bucket2 <= 11 ? 0 : 3 - (11 - bucket1Copy);
 
             p5.fill(255);//white rectangle to cover old text value
             p5.rect(180, 50, 150, 35);
@@ -120,7 +123,7 @@ const fillBucket = (p5) => {//change these values once final design
             return;
         }
 
-        if(bucket2 == 3) return;
+        if (bucket2 == 3) return;
 
         if (source == "bucket1") {
             p5.noStroke();
@@ -189,20 +192,20 @@ const setup = (p5, canvasParentRef) => {
     p5.text(bucket1 + " Gallons Full", 180, 75);//current bucket amounts
     p5.text(bucket2 + " Gallons Full", 450, 315);
 
-    p5.fill(255,255,0);
+    p5.fill(255, 255, 0);
     p5.rect(700, 150, 100, 50);
 };
 
 const draw = (p5) => {
-    if(source == null){
+    if (source == null) {
         p5.noStroke();
-        p5.fill(255,0,0);
+        p5.fill(255, 0, 0);
         p5.rect(700, 50, 100, 50);
     }
 
-    if(source == "faucet"){
+    if (source == "faucet") {
         p5.noStroke();
-        p5.fill(0,0,255);
+        p5.fill(0, 0, 255);
         p5.rect(700, 50, 100, 50);
     }
 };

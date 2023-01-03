@@ -131,9 +131,10 @@ class Explanation extends React.Component {
                 <h2>Why Tessellation Works</h2>
                 <p>Content</p>
                 <h2>Shapes that <em>will</em> tessellate</h2>
-                <p>Content</p>
+                <p>The shapes below all tesselate. Select each shape to view the tessellation on the right side.</p>
                 <div className={styles.shapeHolder} ><Image onClick={() => this.props.tessellate("triangle")} src={triangle} alt="" width="115px" height="100px" /><Image src={square} onClick={() => this.props.tessellate("square")} alt="" width="100" height="100" /><Image src={hexagon} alt="" width="115" height="100" onClick={() => this.props.tessellate("hexagon")} /></div>
                 <h2>Shapes that <em>will not</em> tessellate</h2>
+                <p>These shapes will not tesselate. For obvious reasons, selecting them will not create a tessellation on the right side. They are only presented for your viewing pleasure.</p>
                 <div className={styles.shapeHolder} ><Image src={pentagon} alt="" width="105px" height="100px" /><Image src={heptagon} alt="" width="103px" height="100px" /></div>
             </div>
         );
