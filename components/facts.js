@@ -9,38 +9,38 @@ hideFact = () => {
     render() {
         let textContent;
         if (this.props.textContent == 0) {
-            textContent = "Hypatia is considered the first known female math teacher in history and was also known for teaching astronomy and how to use an astrolabe device to model astronomical events."
+            textContent = "In Ancient Egypt, Hypatia was the first known female teacher of mathematics. She made grounbreaking strides in math and astronomy, and recorded extensive notes on other mathematicians' works."
         }
         if (this.props.textContent == 1) {
-            textContent = "Sophie Germain was born in Paris, France in 1776 and become infatuated with mathematics at a young age. As a teenager, she spent her time reading every mathematics books available in her library and taught herself Latin so she could study the works of Issac Newton and Euler."
+            textContent = "In the midst of the French Revolution, Sophie Germain began educating herself on classical works of mathematics. She would go on to collaborate with Lagrange and win an award from the French Academy of Sciences for her theory of elasticity."
         }
         if (this.props.textContent == 2) {
-            textContent = "Ada Lovelace was an English Mathematician who is regarded as the world’s first computer programmer! In 1836, she wrote the world’s first computer program known as an algorithm for an Analytical Engine to compute Bernoulli numbers."
-        }
+            textContent = "Widely condisered the first computer programmer (from the 1800s), Ada Lovelace worked with Charles Babbage on his analytic engine, a very basic calculator. She took it a step farther, developing an algorithm to findi Bernoulli Numbers."
+        }//here
         if (this.props.textContent == 3) {
-            textContent = "Sofia Kovalevskaya's greatest contribution to the field of mathematics was in her studies of differential equations and elliptic integrals, namely in relation to understanding the workings of Saturn and its rings."
+            textContent = "At a time when Russian women could not attend college, Sofia Kovalevskaya moved to Germany and earned a doctorate in mathematics. Her work ranged from differential equations to the rings of Saturn. She became a professor at the university of Stockholm and earned awards from the Academy of Sciences in France and in Sweden."
         }
         if (this.props.textContent == 4) {
-            textContent = "Noether is best known for discovering Noether’s Theorem, which links mathematics and physics in an extremely important way. The theorem, which is named after her, relates the laws of nature and conservation to mathematical symmetry and how we understand the universe."
+            textContent = "Fleeing from Nazi Germany, Emmy Noether came to work at Princeton's Institute for Advanced Study. In her two years there, she laid the foundations for Einstein's Theory of Relativity, as well as making contributions to the field of Abstract Algebra."
         }
         if (this.props.textContent == 5) {
-            textContent = "Dorothy Vaughn worked on a racially segregated team of computer programmers assigned with using supercomputers to perform computations associated with NASA space launches, including sending astronaut John Glenn into orbit in 1962."
+            textContent = "A humble math teacher in Virginia, Dorothy Vaughn joined NACA (NASA's predecessor) during wartime efforts in the 1940s. In an era of racial segregation, she went on to lead a team of all-black, female mathematicians who helped put satellites into orbit around earth."
         }
         if (this.props.textContent == 6) {
-            textContent = "Katherine Johnson spent 35 years working for NASA and developed a reputation for being a master at performing difficult and complex calculations. She went on to help pioneer the use of computer science and programming to do complex math calculations for NASA."
+            textContent = "In Ancient Egypt, Hypatia was the first known female teacher of mathematics. She made grounbreaking strides in math and astronomy, and recorded extensive notes on other mathematicians' works."
         }
         if (this.props.textContent == 7) {
-            textContent = "Julia Robinson spent decades working on Hilbert’s tenth problem, which was widely considered unsolvable by the mathematics community, she and a small team found a solution in 1980—a groundbreaking achievement!"
+            textContent = "Widely condisered the first computer programmer (from the 1800s), Ada Lovelace worked with Charles Babbage on his analytic engine, a very basic calculator. She took it a step farther, developing an algorithm to findi Bernoulli Numbers."
         }
         if (this.props.textContent == 8) {
-            textContent = "Valerie Thomas is a distinguished scientist and is best known for inventing the llusion Transmitter—a 3-Dimensional Imaging Technology that was the first of its kind when it debuted in 1980. In fact, this technology is the basis for modern 3D imaging tech that we see in modern televisions, video games, and movies!"
+            textContent = "Valerie Thomas was working at NASA when she invented the Illusion Transmitter. This device is still used by NASA, as well as in video games and movies. She also helped pioneer a network that would help shape the current Internet."
         }
         if (this.props.textContent == 9) {
-            textContent = "Maryam Mirzakhani was an Iranian mathematician and math professor at Stanford University. In high school, Mirzakhani and her best friend became the first Iranian women to qualify for the Mathematical Olympiad."
+            textContent = "Maryam Mirzakhani was an Iranian mathematician and math professor at Stanford University. She was the first (and only) woman to win a Fields Medal, the highest honor a mathematician can receive."
         }
         return (
             <div id="factContainer" className={styles.factContainer}>
-                <p hidden={false} className={styles.fact}><span className={styles.largerText}><strong>Math Fun Fact</strong></span><br></br>{textContent}</p>
+                <p hidden={false} className={styles.fact}><span className={styles.largerText}><strong>Women in Math</strong></span><br></br>{textContent}</p>
                 <button aria-label="Hide the math fun facts window" onClick={this.hideFact} className={styles.factClose}>&times;</button>
             </div>
         );

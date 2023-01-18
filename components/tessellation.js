@@ -129,12 +129,12 @@ class Explanation extends React.Component {
             <div className={styles.info}>
                 <p>You may be wondering what tessellation is. If so, you are on the right page. Tessellation is the arrangement of identical shapes without gaps or overlaps. But why do some shapes tessellate while others do not?</p>
                 <h2>Why Tessellation Works</h2>
-                <p>Content</p>
+                <p>Look at the shapes on the right when they tessellate. What do they all have in common? First, choose the triangle and look at its vertices (points): 6 of them meet together. Now look at the rectangle: 4 vertices meet at a point. And for the hexagon, 3 vertices meet at a point. The answer has to do with angles: there are 360 degree in a circle, so the only shapes that will tessellate have an angle with a degree that factors into 360. An equilateral triangle has 60 degree angles, which go into 360 <em>6 times</em>. A rectangle has 90 degree angles, which go in <em>4 times</em>, and a hexagon has 120 degree angles, which go in <em>3 times</em>. But these are only simple shapes: by cutting tessellating shapes into equal pieces, you create <em>new</em> shapes that tessellate.</p>
                 <h2>Shapes that <em>will</em> tessellate</h2>
                 <p>The shapes below all tesselate. Select each shape to view the tessellation on the right side.</p>
                 <div className={styles.shapeHolder} ><Image onClick={() => this.props.tessellate("triangle")} src={triangle} alt="" width="115px" height="100px" /><Image src={square} onClick={() => this.props.tessellate("square")} alt="" width="100" height="100" /><Image src={hexagon} alt="" width="115" height="100" onClick={() => this.props.tessellate("hexagon")} /></div>
                 <h2>Shapes that <em>will not</em> tessellate</h2>
-                <p>These shapes will not tesselate. For obvious reasons, selecting them will not create a tessellation on the right side. They are only presented for your viewing pleasure.</p>
+                <p>These shapes will not tesselate. A pentagon has angles of 108 degrees, and a heptagon has angles of 129 degrees. Neither of these go into 360 evenly. For obvious reasons, selecting them will not create a tessellation on the right side. They are only presented for your viewing pleasure.</p>
                 <div className={styles.shapeHolder} ><Image src={pentagon} alt="" width="105px" height="100px" /><Image src={heptagon} alt="" width="103px" height="100px" /></div>
             </div>
         );
