@@ -2,12 +2,6 @@ import React from "react";
 import styles from "./layout.module.css";
 import Image from 'next/image'
 import candy from '../assets/candy.png'
-import dynamic from 'next/dynamic'
-
-const Fact = dynamic(
-    () => import('./facts'),
-    { ssr: false }
-)
 
 const Million = () => {
     return (
@@ -105,7 +99,6 @@ export default class Billion extends React.Component {
                         {this.state.showBillion ? <MilMillion></MilMillion> : null}
                     </div>
                 </div>
-                <Fact textContent={Math.floor(Math.random() * 10)} />
             </div>
         );
     }

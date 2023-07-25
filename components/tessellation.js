@@ -8,11 +8,6 @@ import pentagon from '../assets/pentagon.png'
 import hexagon from '../assets/hexagon.png'
 import heptagon from '../assets/heptagon.png'
 
-const Fact = dynamic(
-    () => import('./facts'),
-    { ssr: false }
-)
-
 let showTessellation;
 
 let loop = true;//this will get turned off each time to prevent reloading the page a million times per second
@@ -155,7 +150,6 @@ export default class Tessellation extends React.Component {
                     <Explanation tessellate={this.tessellateBoard} />
                     <Sketch className={styles.canvas} setup={setup} draw={draw} />
                 </div>
-                <Fact textContent={Math.floor(Math.random() * 10)} />
             </div>
         );
     }

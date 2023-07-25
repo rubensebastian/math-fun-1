@@ -3,13 +3,6 @@ import styles from "./layout.module.css";
 import Image from 'next/image'
 import candy from '../assets/candy.png'
 import Link from "next/link";
-import dynamic from "next/dynamic";
-
-const Fact = dynamic(
-    () => import('./facts'),
-    { ssr: false }
-)
-
 
 class Explanation extends React.Component {
     render() {
@@ -42,7 +35,7 @@ class Stone extends React.Component {
     }
 }
 
-class Board extends React.Component {
+export default class Board extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -118,16 +111,7 @@ class Board extends React.Component {
                     </div>
                     <div className={styles.stoneBorder} >{stones}</div>
                 </div>
-                <Fact textContent={Math.floor(Math.random() * 10)} />
             </div>
-        );
-    }
-}
-
-export default class Nim2 extends React.Component {
-    render() {
-        return (
-            <Board />
         );
     }
 }

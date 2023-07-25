@@ -7,12 +7,6 @@ const Sketch = dynamic(() => import('react-p5').then((mod) => mod.default), {
     ssr: false,
 })
 
-const Fact = dynamic(
-    () => import('./facts'),
-    { ssr: false }
-)
-
-
 let red = 255;
 let green = 255;
 let blue = 255;
@@ -119,7 +113,6 @@ export default class Colors extends React.Component {
                     <Sketch className={styles.canvas} setup={setup} draw={draw} />
                     <Sliders />
                 </div>
-                <Fact textContent={Math.floor(Math.random() * 10)} />
             </div>
         );
     }

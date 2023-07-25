@@ -6,11 +6,6 @@ let bucket1 = 0;//11 gallon bucket current gallons
 let bucket2 = 0;//3 gallon bucket current gallons
 let source = null;//can be either bucket, faucet or null
 
-const Fact = dynamic(
-    () => import('./facts'),
-    { ssr: false }
-)
-
 // Will only import `react-p5` on client-side
 const Sketch = dynamic(() => import('react-p5').then((mod) => mod.default), {
     ssr: false,
@@ -306,7 +301,6 @@ export default class Water extends React.Component {
                     </div>
                     <Sketch className={styles.canvas} setup={setup} draw={draw} mouseClicked={fillBucket} />
                 </div>
-                <Fact textContent={Math.floor(Math.random() * 10)} />
             </div>
         );
     }

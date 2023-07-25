@@ -2,13 +2,6 @@ import React from "react";
 import styles from "./layout.module.css";
 import dynamic from 'next/dynamic'
 
-const Fact = dynamic(
-    () => import('./facts'),
-    { ssr: false }
-)
-
-
-
 // Will only import `react-p5` on client-side
 const Sketch = dynamic(() => import('react-p5').then((mod) => mod.default), {
     ssr: false,
@@ -81,7 +74,6 @@ export default class Tour extends React.Component {
                         <Sketch setup={setup} draw={draw} />
                     </div>
                 </div>
-                <Fact textContent={Math.floor(Math.random() * 10)} />
             </div>
         );
     }

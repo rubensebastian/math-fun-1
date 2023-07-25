@@ -1,13 +1,5 @@
 import React from "react";
 import styles from "./layout.module.css";
-import dynamic from "next/dynamic";
-
-const Fact = dynamic(
-    () => import('./facts'),
-    { ssr: false }
-)
-
-
 
 let operations = ["+", "-", "*"]
 
@@ -152,7 +144,6 @@ export default class Target extends React.Component {
                 </div>
                 <Calculator shown={this.state.calculatorShown} values={this.state.values} target={this.state.targetValue} level={this.state.level} />
                 <Explanation />
-                <Fact textContent={Math.floor(Math.random() * 10)} />
             </div>
         )
     }

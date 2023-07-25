@@ -1,11 +1,5 @@
 import React from "react";
 import styles from "./layout.module.css";
-import dynamic from "next/dynamic";
-
-const Fact = dynamic(
-    () => import('./facts'),
-    { ssr: false }
-)
 
 export default class Nonogram extends React.Component {
     constructor(props) {
@@ -27,7 +21,6 @@ export default class Nonogram extends React.Component {
                         Content goes here.
                     </div>
                 </div>
-                <Fact textContent={Math.floor(Math.random() * 10)} />
             </div>
         );
     }

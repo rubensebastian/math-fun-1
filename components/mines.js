@@ -1,15 +1,9 @@
 import React from "react";
 import styles from "./layout.module.css";
-import dynamic from "next/dynamic";
 import Image from "next/image";
 import only from '../assets/only.png'
 import opening from '../assets/opening.png'
 import pattern from '../assets/pattern.png'
-
-const Fact = dynamic(
-    () => import('./facts'),
-    { ssr: false }
-)
 
 class MineSquare extends React.Component {
     render() {
@@ -313,7 +307,6 @@ export default class Minesweeper extends React.Component {
                     </div>
                     <Board chooseCell={this.checkCell} values={this.state.cellValues} shown={this.state.shown} flagCell={this.flagCell} />
                 </div>
-                <Fact textContent={Math.floor(Math.random() * 10)} />
             </div>
         );
     }

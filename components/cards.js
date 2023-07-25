@@ -1,11 +1,5 @@
 import React from "react";
 import styles from "./layout.module.css";
-import dynamic from 'next/dynamic'
-
-const Fact = dynamic(
-    () => import('./facts'),
-    { ssr: false }
-)
 
 let deck = [
     -12, -12,
@@ -208,7 +202,6 @@ export default class Table extends React.Component {
                     </div>
                     <Holder valueOne={this.state.cardValues[0]} valueTwo={this.state.cardValues[1]} valueThree={this.state.cardValues[2]} valueFour={this.state.cardValues[3]} swap={this.swapCards} hideCard={this.state.hideCard} />
                 </div>
-                <Fact textContent={Math.floor(Math.random() * 10)} />
             </div>
         );
     }
