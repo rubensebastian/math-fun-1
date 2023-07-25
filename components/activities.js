@@ -1,6 +1,6 @@
 import React from "react";
-import styles from "./layout.module.css";
-import Infocard from "./infocard";
+import styles from "./styles/layout.module.css";
+import Infocard from "./general/infocard";
 
 export default class Activities extends React.Component {
     render() {

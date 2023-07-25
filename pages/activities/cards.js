@@ -1,4 +1,4 @@
-import Menu from '../../components/menu';
+import Menu from '../../components/general/menu';
 import Cards from '../../components/cards';
 import Head from 'next/head';
 

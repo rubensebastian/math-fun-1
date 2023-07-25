@@ -1,4 +1,4 @@
-import Menu from '../../components/menu';
+import Menu from '../../components/general/menu';
 import Connect from '../../components/connect';
 import Head from 'next/head';
 

@@ -1,4 +1,4 @@
-import Menu from '../../components/menu';
+import Menu from '../../components/general/menu';
 import Tic from '../../components/tic';
 import Head from 'next/head';
 

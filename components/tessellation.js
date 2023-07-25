@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./layout.module.css";
+import styles from "./styles/layout.module.css";
 import dynamic from 'next/dynamic'
 import Image from "next/image";
 import triangle from '../assets/triangle.png'

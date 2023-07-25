@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./layout.module.css";
+import styles from "./styles/layout.module.css";
 
 class Line extends React.Component {
     render() {

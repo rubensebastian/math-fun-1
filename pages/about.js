@@ -1,5 +1,5 @@
-import Menu from '../components/menu';
-import About from '../components/about';
+import Menu from '../components/general/menu';
+import About from '../components/general/about';
 import Head from 'next/head';
 
 export default function NimBoard() {

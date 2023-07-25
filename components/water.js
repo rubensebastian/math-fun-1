@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./layout.module.css";
+import styles from "./styles/layout.module.css";
 import dynamic from "next/dynamic";
 
 let bucket1 = 0;//11 gallon bucket current gallons

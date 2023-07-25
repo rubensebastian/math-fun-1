@@ -1,4 +1,4 @@
-import Menu from '../../components/menu';
+import Menu from '../../components/general/menu';
 import DotBox from "../../components/dotbox";
 import Head from 'next/head';
 

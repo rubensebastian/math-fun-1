@@ -1,4 +1,4 @@
-import Menu from '../../components/menu';
+import Menu from '../../components/general/menu';
 import Nim2 from '../../components/nim2';
 import Head from 'next/head';
 

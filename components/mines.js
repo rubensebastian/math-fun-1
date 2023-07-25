@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./layout.module.css";
+import styles from "./styles/layout.module.css";
 import Image from "next/image";
 import only from '../assets/only.png'
 import opening from '../assets/opening.png'

@@ -1,7 +1,7 @@
 import React from "react";
-import styles from "./layout.module.css";
+import styles from "../styles/layout.module.css";
 import Image from 'next/image';
-import fun from '../assets/math fun.png';
+import fun from '../../assets/math fun.png';
 
 class Snail extends React.Component {
     render() {

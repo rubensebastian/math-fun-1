@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./layout.module.css";
+import styles from "../styles/layout.module.css";
 import Link from "next/link";
 import Image from 'next/image'
 

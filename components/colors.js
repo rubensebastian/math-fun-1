@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./layout.module.css";
+import styles from "./styles/layout.module.css";
 import dynamic from 'next/dynamic'
 
 // Will only import `react-p5` on client-side

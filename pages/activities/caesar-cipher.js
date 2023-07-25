@@ -1,5 +1,5 @@
 import GameBoard from '../../components/cipher';
-import Menu from '../../components/menu';
+import Menu from '../../components/general/menu';
 import Head from 'next/head';
 
 export default function Cipher() {
