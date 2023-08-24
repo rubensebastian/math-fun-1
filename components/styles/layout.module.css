@@ -17,7 +17,7 @@
   display: flex;
   flex-direction: row;
   height: 100px;
-  border: 1px solid #66081A;
+  border: 1px solid #1ed69c;
   margin-left: 5px;
 }
 
@@ -25,7 +25,7 @@
   display: flex;
   flex-direction: column;
   background-color: white;
-  border: 1px solid #66081A;
+  border: 1px solid #1ed69c;
   font-size: 18px;
   width: 40px;
   justify-content: space-evenly;
@@ -63,7 +63,7 @@
 }
 
 .btn {
-  background-color: #66081A;
+  background-color: #1ed69c;
   color: white;
   border-radius: 5px;
   border: 1px solid black;
@@ -76,7 +76,7 @@
 }
 
 .btn:active {
-  background-color: #470a15;
+  background-color: #118963;
 }
 
 .fsuHolder {
@@ -91,7 +91,7 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  background-color: #66081A;
+  background-color: #1ed69c;
   min-width: 100%;
 }
 
@@ -118,7 +118,7 @@
 }
 
 .menuOption:hover {
-  background-color: #470a15;
+  background-color: #1ed69c;
 }
 
 .menuLink {
@@ -196,7 +196,7 @@
 
 .nimButton {
   width: 210px;
-  background-color: #782F40;
+  background-color: #1ed69c;
   border: none;
   border-radius: 1em;
   color: white;
@@ -209,7 +209,7 @@
 }
 
 .nimButton:active {
-  background-color: #750f27;
+  background-color: #079c6d;
 }
 
 .info {
@@ -238,7 +238,7 @@
 .checkerRed {
   border: 3px solid black;
   border-radius: 50%;
-  background-color: #66081A;
+  background-color: #1ed69c;
   height: 75px;
   width: 75px;
 }
@@ -396,7 +396,7 @@
   display: flex;
   justify-content: center;
   background-color: white;
-  color: #66081A;
+  color: #1ed69c;
   font-size: 50px;
   user-select: none;
   align-items: center;
@@ -568,7 +568,7 @@
 }
 
 .infoCall {
-  color: #cd0d30;
+  color: #1ed69c;
 }
 
 .border {
@@ -602,13 +602,6 @@
   justify-content: center;
   align-items: flex-start;
 }
-
-
-
-
-
-
-
 
 @media only screen and (max-width: 1300px) {
   .factContainer {

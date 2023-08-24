@@ -17,8 +17,6 @@ function MenuLink(props) {
 export default function Menu() {
     return (
         <div className={styles.fsuHolder}>
-            <Image src={seal} width="100" height="100" alt="This website is associated with FSU." />
-            <p className={styles.largerText}>Created by <Link href='https://geoset.fsu.edu'><a className={styles.promoLink}>GEOSET</a></Link> in partnership with <Link href='https://math.fsu.edu'><a  className={styles.promoLink} >FSU Math</a></Link></p>
             <nav className={styles.menuContainer}>
                 <MenuLink location='' />
                 <MenuLink location='/activities' locationName='Interactive Math & Games' />
