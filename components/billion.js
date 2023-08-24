@@ -91,7 +91,7 @@ export default class Billion extends React.Component {
                         <h2>Candy Counter</h2>
                         {this.state.showMillion ? null : <p>Increase your candy amount to 1,000 to win!</p>}
                         {this.state.counter >= 100 && !this.state.showMillion ? <p>Now your candy will increase by 10 each time!</p> : null}
-                        {this.state.showMillion ? null : <div className={styles.horizontal}><Image src={candy}></Image><p className={styles.extraLarge}>{this.state.counter}</p></div>}
+                        {this.state.showMillion ? null : <div className={styles.horizontal}><Image src={candy} alt=""></Image><p className={styles.extraLarge}>{this.state.counter}</p></div>}
                         {this.state.showMillion ? null : <button className={styles.btn} onClick={this.increaseCount}>Increase Counter</button>}
                         {this.state.showMillion ? null : <button className={styles.btn} onClick={this.skipAhead}>Just Show Me One Million</button>}
                         {this.state.showMillion && !this.state.showBillion ? <button onClick={this.showBillion} className={styles.btn}>Click to see how much one billion is</button>: null}

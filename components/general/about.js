@@ -12,7 +12,7 @@ export default class Template extends React.Component {
         return (
             <div className={styles.vertical}>
                 <h1>About</h1>
-                <p>Here's some content.</p>
+                <p>This page is likely going away soon.</p>
             </div>
         );
     }
