@@ -2,7 +2,7 @@ import Menu from '../components/general/menu';
 import About from '../components/general/about';
 import Head from 'next/head';
 
-export default function NimBoard() {
+export default function AboutPage() {
     return (
         <div>
             <Head>

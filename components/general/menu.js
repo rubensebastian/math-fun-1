@@ -1,8 +1,6 @@
 import React from "react";
 import styles from "../styles/layout.module.css";
 import Link from 'next/link';
-import Image from 'next/image'
-import seal from "../../assets/fsu-seal-black.png"
 
 function MenuLink(props) {
     return props.location == '' ?
@@ -20,7 +18,6 @@ export default function Menu() {
             <nav className={styles.menuContainer}>
                 <MenuLink location='' />
                 <MenuLink location='/activities' locationName='Interactive Math & Games' />
-                <MenuLink location='/about' locationName='About' />
             </nav>
         </div>
     );
