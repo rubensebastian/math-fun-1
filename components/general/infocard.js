@@ -9,7 +9,7 @@ export default class Infocard extends React.Component {
             <div className={styles.infoCard}>
                 <h2 className={styles.infoH}>{this.props.title}</h2>
                 <p className={styles.infoP}>{this.props.description}</p>
-                <Link href={this.props.linkDestination}><a>{this.props.call} &rarr;</a></Link>
+                <Link href={this.props.linkDestination}>{this.props.call} &rarr;</Link>
             </div>
         );
     }

@@ -4,12 +4,12 @@ import Link from 'next/link';
 
 function MenuLink(props) {
     return props.location == '' ?
-        <Link href='/'>
-            <a className={styles.menuLink}><li className={styles.menuOption}>Home</li></a>
+        <Link href='/' className={styles.menuLink}>
+            <li className={styles.menuOption}>Home</li>
         </Link> :
-        <Link href={props.location}>
-            <a className={styles.menuLink}><li className={styles.menuOption}>{props.locationName}</li></a>
-        </Link>;
+        <Link href={props.location} className={styles.menuLink}>
+            <li className={styles.menuOption}>{props.locationName}</li>
+        </Link>
 }
 
 export default function Menu() {
